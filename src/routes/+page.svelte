@@ -504,16 +504,32 @@
         text-align: center;
         max-width: 600px;
         padding: 4rem;
-        border: 1px solid rgba(62, 39, 35, 0.1);
         border-radius: 16px;
-        background-color: #ffffff;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .cta-card::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        background-image: url("/cta-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        filter: blur(2px) brightness(0.5);
+        z-index: -1;
     }
 
     .cta-card h2 {
         font-family: "Instrument Serif", serif;
         font-size: 3rem;
         font-weight: 400;
-        color: #3e2723;
+        color: #ffffff;
         margin: 0 0 1rem 0;
     }
 
@@ -522,13 +538,19 @@
         font-size: 1.1rem;
         font-weight: 300;
         line-height: 1.6;
-        color: #5d4037;
+        color: rgba(255, 255, 255, 0.9);
         margin: 0 0 2rem 0;
     }
 
     .submit-btn {
         font-size: 1.1rem;
         padding-bottom: 6px;
+        color: #ffffff;
+        border-bottom-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .submit-btn:hover {
+        border-bottom-color: #ffffff;
     }
 
     /* --- FOOTER --- */
