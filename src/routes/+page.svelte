@@ -66,12 +66,16 @@
 
 <svelte:head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin="anonymous"
+    />
     <link
         href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet"
     />
-    <title>indi.coded | A computational sketchbook of India</title>
+    <title>in.decoded</title>
 </svelte:head>
 
 <div class="hero-container">
@@ -111,16 +115,14 @@
 
 <section class="about-section">
     <div class="about-card">
-        <div class="about-label">The Project</div>
         <div class="about-content">
-            <h2>
-                A computational sketchbook exploring India's visual and cultural
-                memory.
-            </h2>
+            <h2>A experiment exploring India's visual and cultural memory.</h2>
             <p>
-                In.decoded is an ongoing archive of experiments treating culture as a system to decode patterns, narratives, and historical artifacts.
+                In.decoded is an ongoing archive of experiments treating culture
+                as a system to decode patterns, narratives, and historical
+                artifacts.
             </p>
-            <a href="/about" class="btn about-btn">Read the full manifesto →</a>
+            <a href="/about" class="btn about-btn">Read the full story →</a>
         </div>
     </div>
 </section>
@@ -134,10 +136,13 @@
     <div class="experiments-grid">
         <!-- Item 1: Delimitation Project -->
         <a href="/delimitation" class="experiment-card">
-            <div class="card-image" style="background-image: url('/delimitation_card.png');"></div>
+            <div
+                class="card-image"
+                style="background-image: url('/delimitation_card.png');"
+            ></div>
             <div class="card-meta">
                 <span class="tag">Data Story</span>
-                <span class="year">2026</span>
+                <span class="year">June 2026</span>
             </div>
             <h3>The Delimitation Dilemma</h3>
             <p>
@@ -151,7 +156,10 @@
 <section class="cta-section">
     <div class="cta-card">
         <h2>Have an idea?</h2>
-        <p>We are always looking for new stories, data sets, and computational experiments to decode India's history and culture.</p>
+        <p>
+            We are always looking for new stories, data sets, and computational
+            experiments to decode India's history and culture.
+        </p>
         <a href="/submit" class="btn submit-btn">Submit a Proposal →</a>
     </div>
 </section>
@@ -294,20 +302,23 @@
     .btn {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         font-family: "Inter", sans-serif;
         font-size: 0.95rem;
-        font-weight: 300;
+        font-weight: 500;
         text-decoration: none;
-        color: #3e2723; /* Deep brown */
+        color: #ffffff;
+        background-color: #3e2723;
+        padding: 0.75rem 1.5rem;
+        border-radius: 100px;
         transition: all 0.3s ease;
-        padding-bottom: 4px;
-        border-bottom: 1px solid rgba(62, 39, 35, 0.3);
+        border: none;
     }
 
     .btn:hover {
-        border-bottom-color: #3e2723;
-        opacity: 0.8;
-        transform: translateY(-1px);
+        background-color: #2b1a17;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(62, 39, 35, 0.2);
     }
 
     .about-btn {
@@ -343,7 +354,11 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+        background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.2)
+        );
         z-index: 1;
     }
 
@@ -384,12 +399,14 @@
 
     .about-btn {
         margin-top: 2rem;
-        color: #ffffff;
-        border-bottom-color: rgba(255, 255, 255, 0.4);
+        background-color: #ffffff;
+        color: #3e2723;
     }
 
     .about-btn:hover {
-        border-bottom-color: #ffffff;
+        background-color: #fcfbf8;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
     }
 
     /* --- EXPERIMENTS SECTION --- */
@@ -544,13 +561,15 @@
 
     .submit-btn {
         font-size: 1.1rem;
-        padding-bottom: 6px;
-        color: #ffffff;
-        border-bottom-color: rgba(255, 255, 255, 0.4);
+        padding: 0.8rem 1.8rem;
+        background-color: #ffffff;
+        color: #3e2723;
     }
 
     .submit-btn:hover {
-        border-bottom-color: #ffffff;
+        background-color: #fcfbf8;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
     }
 
     /* --- FOOTER --- */
