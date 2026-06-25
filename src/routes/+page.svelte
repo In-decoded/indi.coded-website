@@ -442,7 +442,7 @@
 
     .card-image {
         width: 100%;
-        aspect-ratio: 1536 / 1024;
+        aspect-ratio: 1408 / 1024;
         background-color: #f0ede6;
         background-size: cover;
         background-position: center;
