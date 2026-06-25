@@ -148,6 +148,14 @@
     </div>
 </section>
 
+<section class="cta-section">
+    <div class="cta-card">
+        <h2>Have an idea?</h2>
+        <p>We are always looking for new stories, data sets, and computational experiments to decode India's history and culture.</p>
+        <a href="/submit" class="btn submit-btn">Submit a Proposal →</a>
+    </div>
+</section>
+
 <footer class="site-footer">
     <div class="footer-left">indi.coded &copy; 2026</div>
     <div class="footer-right">
@@ -482,6 +490,45 @@
         line-height: 1.5;
         color: #5d4037;
         margin: 0;
+    }
+
+    /* --- CTA SECTION --- */
+    .cta-section {
+        padding: 4rem 4rem 8rem 4rem;
+        background-color: #fcfbf8;
+        display: flex;
+        justify-content: center;
+    }
+
+    .cta-card {
+        text-align: center;
+        max-width: 600px;
+        padding: 4rem;
+        border: 1px solid rgba(62, 39, 35, 0.1);
+        border-radius: 16px;
+        background-color: #ffffff;
+    }
+
+    .cta-card h2 {
+        font-family: "Instrument Serif", serif;
+        font-size: 3rem;
+        font-weight: 400;
+        color: #3e2723;
+        margin: 0 0 1rem 0;
+    }
+
+    .cta-card p {
+        font-family: "Inter", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 300;
+        line-height: 1.6;
+        color: #5d4037;
+        margin: 0 0 2rem 0;
+    }
+
+    .submit-btn {
+        font-size: 1.1rem;
+        padding-bottom: 6px;
     }
 
     /* --- FOOTER --- */
