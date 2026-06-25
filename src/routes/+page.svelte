@@ -134,7 +134,7 @@
     <div class="experiments-grid">
         <!-- Item 1: Delimitation Project -->
         <a href="/delimitation" class="experiment-card">
-            <div class="card-image placeholder-4"></div>
+            <div class="card-image" style="background-image: url('/delimitation_card.png');"></div>
             <div class="card-meta">
                 <span class="tag">Data Story</span>
                 <span class="year">2026</span>
@@ -442,8 +442,10 @@
 
     .card-image {
         width: 100%;
-        aspect-ratio: 4/5;
-        background-color: rgba(62, 39, 35, 0.05);
+        aspect-ratio: 1536 / 1024;
+        background-color: #f0ede6;
+        background-size: cover;
+        background-position: center;
         margin-bottom: 1.5rem;
         border-radius: 4px;
         transition: filter 0.3s ease;
