@@ -30,7 +30,7 @@ var chartLayer;
 var chartNodes;
 var header;
 var yScale, barScale;
-var col1 = width * 0.38, col2 = width * 0.55, col3 = width * 0.70, col4 = width * 0.85;
+var col1 = width * 0.38, col2 = width * 0.50, col3 = width * 0.62, col4 = width * 0.82;
 
 var currentColorMetric = "Default";
 

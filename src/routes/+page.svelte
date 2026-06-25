@@ -444,7 +444,8 @@
         width: 100%;
         aspect-ratio: 1408 / 1024;
         background-color: #f0ede6;
-        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
         background-position: center;
         margin-bottom: 1.5rem;
         border-radius: 4px;
