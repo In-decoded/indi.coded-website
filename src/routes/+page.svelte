@@ -144,7 +144,7 @@
                 <span class="tag">Data Story</span>
                 <span class="year">June 2026</span>
             </div>
-            <h3>The Delimitation Dilemma</h3>
+            <h3>Where do we draw the line?</h3>
             <p>
                 An interactive exploration of India's shifting parliamentary
                 representation and demographic power.

@@ -3,8 +3,9 @@
     src: url("myriadproregular.woff") format("woff");
 }
 body {
-	background: #fcfbf8;
+	background: rgb(242, 225, 175);
 	font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
 }
 #cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #fdf9f2; z-index:9999;}
 .bimg{
@@ -276,18 +277,18 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    background-color: #fcfbf8;
+    background-color: rgb(242, 225, 175);
     color: #1a1a1a;
 }
 
 #intro, #outro {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 60px 20px;
 }
 
 #intro h1 {
@@ -303,6 +304,178 @@ body {
     font-size: 1.125rem;
     color: #5d4037;
     font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.intro-text h2 {
+    font-family: "Instrument Serif", serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #3e2723;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.intro-diagram {
+    margin: 40px auto;
+    max-width: 90%;
+    text-align: center;
+}
+
+.intro-diagram img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #5d4037;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: #fff;
+    margin-bottom: 15px;
+}
+
+.intro-diagram figcaption {
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    color: #5d4037;
+    line-height: 1.5;
+    padding: 0 20px;
+}
+
+/* Table Styles - Standard Grid */
+.table-container {
+    margin: 40px auto;
+    max-width: 100%;
+    overflow-x: auto;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.delimitation-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Inter", sans-serif;
+    background: #fdf9f2;
+    border: 2px solid #5d4037;
+}
+
+.delimitation-table th, .delimitation-table td {
+    border: 1px solid #5d4037;
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.delimitation-table .table-title {
+    background-color: #5d4037;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 15px;
+    border-bottom: 2px solid #5d4037;
+    text-align: center;
+}
+
+.delimitation-table .row-header {
+    background-color: #bf360c;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: none;
+    letter-spacing: normal;
+    width: 20%;
+    text-align: center;
+}
+
+/* Reset the large years */
+.delimitation-table tr:first-of-type td {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    color: #3e2723;
+}
+
+.delimitation-table td {
+    color: #3e2723;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    width: 20%;
+}
+
+.problem-table .row-header {
+    width: 70%;
+    text-align: center;
+}
+
+.problem-table td {
+    width: 30%;
+    font-weight: 700;
+}
+
+.table-footnotes {
+    margin-top: 10px;
+    font-family: "Inter", sans-serif;
+    text-align: left;
+    padding: 10px 0;
+    border-top: none;
+}
+
+#intro .table-footnotes p {
+    margin: 5px 0;
+    line-height: 1.4;
+    font-size: 0.85rem;
+    color: #5d4037;
+}
+
+#intro .table-footnotes p {
+    margin: 5px 0;
+    line-height: 1.4;
+    font-size: 0.85rem;
+    color: #5d4037;
+}
+
+/* Stacked Paper Styles */
+.notebook-quote {
+    background-color: #f4f1ea;
+    border: 1px solid #e0dbce;
+    padding: 25px 30px;
+    margin: 40px auto;
+    max-width: 550px;
+    box-shadow: 
+        0 1px 1px rgba(0,0,0,0.15), 
+        0 8px 0 -4px #f4f1ea, 
+        0 8px 1px -3px rgba(0,0,0,0.15), 
+        0 16px 0 -8px #f4f1ea, 
+        0 16px 1px -7px rgba(0,0,0,0.15);
+    position: relative;
+    text-align: left;
+}
+
+.notebook-quote h2 {
+    font-family: "Instrument Serif", serif;
+    font-size: 1.8rem;
+    color: #3e2723;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#intro .notebook-quote p {
+    font-family: "Georgia", serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+    margin: 0;
 }
 
 .scroll-prompt {
@@ -327,7 +500,8 @@ body {
     position: sticky;
     top: 5vh;
     height: 90vh;
-    width: 100%;
+    width: 55%;
+    margin-left: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -342,8 +516,9 @@ body {
 
 .scrolly-text {
     position: relative;
-    width: 35%;
+    width: 40%;
     margin-top: -90vh;
+    padding-top: 15vh;
     z-index: 10;
 }
 
@@ -413,7 +588,142 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Handdrawn Tooltip Box */
+.handdrawn-box {
+    border: 2px solid #5d4037;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    padding: 0px 6px;
+    position: relative;
+    cursor: help;
+    display: inline-block;
+    text-decoration: none;
+    color: #e64a19;
+    font-weight: 500;
+}
+
+.handdrawn-box .tooltip-text {
+    visibility: hidden;
+    width: max-content;
+    max-width: 250px;
+    background-color: #fdf9f2;
+    color: #3e2723;
+    border: 2px solid #5d4037;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    text-align: center;
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 100;
+    bottom: 130%; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.4;
+    white-space: normal;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+}
+
+.handdrawn-box .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #5d4037 transparent transparent transparent;
+}
+
+.handdrawn-box:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Did You Know Sticky Note */
+.did-you-know {
+    position: absolute;
+    right: -320px;
+    top: 15%;
+    width: 260px;
+    background: #ffecb3;
+    border: 1px solid #ffca28;
+    padding: 20px 20px 25px 20px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.1), inset 0 0 20px rgba(255, 255, 255, 0.5);
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    color: #4e342e;
+    animation: floatNote 5s ease-in-out infinite;
+    z-index: 10;
+}
+
+/* Pushpin effect */
+.did-you-know::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at 30% 30%, #ff8a65, #d84315);
+    border-radius: 50%;
+    box-shadow: 2px 4px 6px rgba(0,0,0,0.2), inset -2px -2px 4px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+/* Pin needle shadow */
+.did-you-know::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    width: 2px;
+    height: 15px;
+    background: rgba(0,0,0,0.2);
+    transform: rotate(30deg);
+    z-index: 1;
+}
+
+.dyk-title {
+    font-weight: 600;
+    font-family: "Instrument Serif", serif;
+    font-size: 1.8rem;
+    color: #bf360c;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+#intro .did-you-know p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+    font-weight: 400;
+    color: #4e342e;
+}
+
+@keyframes floatNote {
+    0% { transform: translateY(0px) rotate(3deg); }
+    50% { transform: translateY(-8px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(3deg); }
+}
+
 /* Responsive */
+@media (max-width: 1450px) {
+    .did-you-know {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 90%;
+        max-width: 400px;
+        margin: 2rem auto;
+        transform: rotate(2deg);
+        animation: none;
+    }
+}
+
 @media (max-width: 768px) {
     #scrolly {
         display: block;

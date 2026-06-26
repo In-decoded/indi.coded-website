@@ -1,4 +1,5 @@
 <script>
+    // @ts-nocheck
     import { onMount } from 'svelte';
     import * as d3 from 'd3';
 
@@ -7,52 +8,15 @@
     let height = 800;
     let tooltip;
 
-    // Dummy Data for Poverty Rates by State
-    // Matching the format of 'STNAME_SH' from INDIA_STATES.geojson
-    const povertyData = [
-        { state_name: "Andhra Pradesh", poverty_rate: 9.2 },
-        { state_name: "Arunachal Pradesh", poverty_rate: 34.6 },
-        { state_name: "Assam", poverty_rate: 31.9 },
-        { state_name: "Bihar", poverty_rate: 51.9 },
-        { state_name: "Chhattisgarh", poverty_rate: 39.9 },
-        { state_name: "Goa", poverty_rate: 5.0 },
-        { state_name: "Gujarat", poverty_rate: 11.6 },
-        { state_name: "Haryana", poverty_rate: 11.1 },
-        { state_name: "Himachal Pradesh", poverty_rate: 8.0 },
-        { state_name: "Jharkhand", poverty_rate: 42.1 },
-        { state_name: "Karnataka", poverty_rate: 13.1 },
-        { state_name: "Kerala", poverty_rate: 0.7 },
-        { state_name: "Madhya Pradesh", poverty_rate: 36.6 },
-        { state_name: "Maharashtra", poverty_rate: 14.8 },
-        { state_name: "Manipur", poverty_rate: 36.8 },
-        { state_name: "Meghalaya", poverty_rate: 32.6 },
-        { state_name: "Mizoram", poverty_rate: 20.4 },
-        { state_name: "Nagaland", poverty_rate: 22.7 },
-        { state_name: "Odisha", poverty_rate: 29.3 },
-        { state_name: "Punjab", poverty_rate: 5.5 },
-        { state_name: "Rajasthan", poverty_rate: 29.4 },
-        { state_name: "Sikkim", poverty_rate: 3.8 },
-        { state_name: "Tamil Nadu", poverty_rate: 4.8 },
-        { state_name: "Telangana", poverty_rate: 13.7 },
-        { state_name: "Tripura", poverty_rate: 14.0 },
-        { state_name: "Uttar Pradesh", poverty_rate: 37.7 },
-        { state_name: "Uttarakhand", poverty_rate: 17.7 },
-        { state_name: "West Bengal", poverty_rate: 21.4 },
-        { state_name: "Jammu & Kashmir", poverty_rate: 12.5 }
-    ];
-
-    // Convert array to Map for fast lookups
-    const dataMap = new Map(povertyData.map(d => [d.state_name, d]));
-
-    // Define the D3 Color Scale (White to Dark Red)
-    // Domain goes from 0% to 60% poverty
+    // Define the D3 Color Scale (Light Green to Dark Green for GDP)
+    // Domain goes from 0 to 600 (min is ~54, max is ~530)
     const colorScale = d3.scale.linear()
-        .domain([0, 60])
-        .range(["#fff5f0", "#67000d"]);
+        .domain([0, 600])
+        .range(["#f7fcf5", "#00441b"]);
 
     onMount(async () => {
         // Fetch the GeoJSON from the static/data folder
-        const response = await fetch('/data/INDIA_STATES.geojson');
+        const response = await fetch('/data/GDP.geojson');
         const geojson = await response.json();
 
         // Setup D3 Projection tailored for India
@@ -74,26 +38,23 @@
             .append('path')
             .attr('d', pathGenerator)
             .attr('fill', d => {
-                // Using the property from your geojson file
-                const stateName = d.properties.STNAME_SH || d.properties.STNAME;
-                const stateStats = dataMap.get(stateName);
-                
-                return stateStats ? colorScale(stateStats.poverty_rate) : '#cccccc'; // Grey if no data
+                const gdp = d.properties.GDPCAPITA;
+                return gdp ? colorScale(gdp) : '#cccccc'; // Grey if no data
             })
             .attr('stroke', '#ffffff')
             .attr('stroke-width', 0.5)
             // Tooltip interactivity
             .on('mousemove', function(event, d) {
                 const stateName = d.properties.STNAME_SH || d.properties.STNAME;
-                const stateStats = dataMap.get(stateName);
-                const rate = stateStats ? `${stateStats.poverty_rate}%` : 'No Data';
+                const gdp = d.properties.GDPCAPITA;
+                const rate = gdp ? `$${gdp}k` : 'No Data';
                 
                 d3.select(this).attr('stroke-width', 2).attr('stroke', '#000');
                 
                 tooltip.style.opacity = 1;
                 tooltip.style.left = (event.pageX + 15) + 'px';
                 tooltip.style.top = (event.pageY - 28) + 'px';
-                tooltip.innerHTML = `<strong>${stateName}</strong><br/>Poverty Rate: ${rate}`;
+                tooltip.innerHTML = `<strong>${stateName}</strong><br/>GDP per Capita: ${rate}`;
             })
             .on('mouseout', function() {
                 d3.select(this).attr('stroke-width', 0.5).attr('stroke', '#ffffff');
@@ -115,20 +76,20 @@
 
     <main class="main-content">
         <header class="page-header">
-            <h1>India Poverty Rate Map</h1>
-            <p>Visualizing poverty rate data using the newly imported Indian States GeoJSON</p>
+            <h1>India GDP per Capita Map</h1>
+            <p>Visualizing GDP per capita data using the GDP GeoJSON</p>
         </header>
 
         <section class="map-section">
             <svg bind:this={svgElement}></svg>
             
             <div class="legend">
-                <p class="legend-title">Poverty Rate (%)</p>
+                <p class="legend-title">GDP per Capita ($k)</p>
                 <div class="gradient-bar"></div>
                 <div class="legend-labels">
-                    <span>0%</span>
-                    <span>30%</span>
-                    <span>60%+</span>
+                    <span>$0</span>
+                    <span>$300</span>
+                    <span>$600+</span>
                 </div>
             </div>
         </section>
@@ -143,7 +104,7 @@
         margin: 0;
         padding: 0;
         font-family: "Inter", sans-serif;
-        background-color: #fcfbf8;
+        background-color: rgb(242, 225, 175);
         color: #1a1a1a;
     }
 
@@ -262,12 +223,12 @@
         transition: opacity 0.2s;
     }
     
-    path {
+    :global(.map-section path) {
         transition: stroke-width 0.2s, opacity 0.2s;
         cursor: pointer;
     }
     
-    path:hover {
+    :global(.map-section path:hover) {
         opacity: 0.8;
     }
 
@@ -291,7 +252,7 @@
         width: 100%;
         height: 12px;
         border-radius: 6px;
-        background: linear-gradient(to right, #fff5f0, #fb6a4a, #67000d);
+        background: linear-gradient(to right, #f7fcf5, #41ab5d, #00441b);
     }
 
     .legend-labels {

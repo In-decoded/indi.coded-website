@@ -235,12 +235,12 @@ export async function initDelimitation() {
         }
     }
 
-    function morphPaths(targetKey) {
+    function morphPaths(targetKey, isHidden) {
         var targetGeo = mapDatasets[targetKey] || mapDatasets["Base"];
         currentColorMetric = targetKey;
 
         statePaths.transition().duration(1500)
-            .style("opacity", 1)
+            .style("opacity", isHidden ? 0 : 1)
             .style("fill", function(d) { return getStateColor(d, targetKey); })
             // Replaced d3-interpolate-path with native D3 tweening since points perfectly align!
             .attr("d", function(d, i) {
@@ -258,14 +258,16 @@ export async function initDelimitation() {
         var targetKey = "Base";
         if (stepIndex === 1) targetKey = "Base";
         if (stepIndex === 2) targetKey = "CurrentSeats";
-        if (stepIndex === 3) targetKey = "Population";
+        if (stepIndex === 3) targetKey = "ProjectedSeats";
         if (stepIndex === 4) targetKey = "ProjectedSeats";
-        if (stepIndex === 5) targetKey = "FertilityRate";
-        if (stepIndex === 6) targetKey = "GDPPerCapita";
-        if (stepIndex === 7) targetKey = "TaxContribution";
-        if (stepIndex === 8) targetKey = "Literacy";
+        if (stepIndex === 5) targetKey = "Population";
+        if (stepIndex === 6) targetKey = "FertilityRate";
+        if (stepIndex === 7) targetKey = "GDPPerCapita";
+        if (stepIndex === 8) targetKey = "TaxContribution";
+        if (stepIndex === 9) targetKey = "Literacy";
+        var isHidden = false;
 
-        if (stepIndex === 9) {
+        if (stepIndex === 10) {
             statePaths.transition().duration(1000).style("opacity", 0);
             chartLayer.style("opacity", 1);
             header.transition().duration(1000).style("opacity", 1);
@@ -296,7 +298,7 @@ export async function initDelimitation() {
                 });
                 chartLayer.transition().duration(500).delay(1500).style("opacity", 0);
             }
-            morphPaths(targetKey);
+            morphPaths(targetKey, isHidden);
         }
     }
 
