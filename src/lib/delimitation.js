@@ -265,9 +265,18 @@ export async function initDelimitation() {
         if (stepIndex === 7) targetKey = "GDPPerCapita";
         if (stepIndex === 8) targetKey = "TaxContribution";
         if (stepIndex === 9) targetKey = "Literacy";
+        if (stepIndex === 45 || stepIndex === 46) targetKey = "ProjectedSeats";
         var isHidden = false;
 
-        if (stepIndex === 10) {
+        if (stepIndex === 45 || stepIndex === 46) {
+            d3.select('#map-svg').transition().duration(500).style("opacity", 0);
+            if (chartLayer && chartLayer.style("opacity") > 0) {
+                header.transition().duration(500).style("opacity", 0);
+                chartLayer.select(".chart-footer").transition().duration(500).style("opacity", 0);
+                chartLayer.transition().duration(500).style("opacity", 0);
+            }
+        } else if (stepIndex === 10) {
+            d3.select('#map-svg').transition().duration(500).style("opacity", 1);
             statePaths.transition().duration(1000).style("opacity", 0);
             chartLayer.style("opacity", 1);
             header.transition().duration(1000).style("opacity", 1);
@@ -286,6 +295,7 @@ export async function initDelimitation() {
                     else return col4;
                 });
         } else {
+            d3.select('#map-svg').transition().duration(500).style("opacity", 1);
             if (chartLayer && chartLayer.style("opacity") > 0) {
                 header.transition().duration(500).style("opacity", 0);
                 chartLayer.select(".chart-footer").transition().duration(500).style("opacity", 0);

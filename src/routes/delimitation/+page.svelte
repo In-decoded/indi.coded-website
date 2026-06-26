@@ -4,7 +4,44 @@
 
     onMount(() => {
         initDelimitation();
+        const processObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    activeProcess = parseInt(entry.target.dataset.process);
+                }
+            });
+        }, { rootMargin: "-40% 0px -40% 0px" });
+        
+        document.querySelectorAll('.process-trigger').forEach(el => processObserver.observe(el));
     });
+
+    let stackIndex = $state(0);
+    const stackData = [
+        {
+            heading: "Population Distribution",
+            caption:
+                "In this region, there are 40% Urban voters and 60% Rural voters",
+            img: "/gerrymander-1.png",
+        },
+        {
+            heading: "Existing Constituencies",
+            caption:
+                "Delimitation occurs in favour of Rural voters in all constituencies",
+            img: "/gerrymander-2.png",
+        },
+        {
+            heading: "After Delimitation",
+            caption:
+                "Delimitation occurs in favour of Urban voters in constituencies A & B and Rural voters in C & D",
+            img: "/gerrymander-3.png",
+        },
+    ];
+
+    function nextStack() {
+        stackIndex = (stackIndex + 1) % stackData.length;
+    }
+
+    let activeProcess = $state(3);
 </script>
 
 <section id="intro">
@@ -125,9 +162,9 @@
                 ></span
             >, such periodic readjustment has not followed every Census in
             India.
-            <strong style="color: #bf360c;"
+            <mark
                 >The last redistribution of Lok Sabha seats between states was
-                done in 1972, more than 5 decades ago!</strong
+                done in 1972, more than 5 decades ago!</mark
             >
         </p>
         <p>
@@ -208,9 +245,10 @@
             successfully implemented population control measures at that time.
             In 2001, the 84th Constitutional Amendment further pushed the freeze
             to 2026, with the relevant population figures to be sourced from the
-            first Census after 2026. As a result of this freeze, India still
-            relies on the 1971 Census for allocation of seats in the Parliament
-            to States!
+            first Census after 2026. As a result of this freeze, <mark
+                >India still relies on the 1971 Census for allocation of seats
+                in the Parliament to States!</mark
+            >
         </p>
 
         <div class="notebook-quote stacked-paper">
@@ -222,15 +260,19 @@
                 account for population changes. However, the 2008 Delimitation
                 order readjusted the boundaries of territorial constituencies
                 without modifying the allocation of Lok Sabha and Assembly
-                seats. Thus, the Lok Sabha seats are still fixed at 543.
+                seats. <mark
+                    >Thus, the Lok Sabha seats are still fixed at 543.</mark
+                >
             </p>
         </div>
 
         <h2 style="color: #bf360c;">Why is that a problem?</h2>
         <p>
             By the time the first Census figures after 2026 will be published,
-            the population figures used to allot parliamentary and assembly
-            seats to each state will be 6 decades old.
+            <mark
+                >the population figures used to allot parliamentary and assembly
+                seats to each state will be 6 decades old.</mark
+            >
         </p>
 
         <div class="table-container">
@@ -434,6 +476,318 @@
             </p>
         </div>
 
+        <div
+            class="step"
+            data-step="45"
+            style="margin: 30vh 0; text-align: justify; width: 220%; margin-left: 15%; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
+        >
+            <p
+                style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 20px;"
+            >
+                Representative democracy is calculated in terms of the ability
+                to influence the decision of the representative (i.e., MP or
+                MLA). When an MP or MLA represents a very large population, it
+                becomes difficult for individual citizens to have their concerns
+                heard, let alone see them translated into concrete actions.
+            </p>
+
+            <div
+                style="display: flex; gap: 20px; justify-content: center; margin: 30px 0;"
+                class="compare-container"
+            >
+                <img
+                    src="/compare-1.png"
+                    class="compare-img"
+                    alt="Constituency comparison 1"
+                    style="max-width: 240px; width: 40%;"
+                />
+                <img
+                    src="/compare-2.png"
+                    class="compare-img"
+                    alt="Constituency comparison 2"
+                    style="max-width: 240px; width: 40%;"
+                />
+            </div>
+            <p
+                style="font-style: italic; text-align: center; color: #795548; font-size: 0.95rem; margin-top: -10px; margin-bottom: 30px;"
+            >
+                These two constituencies have almost the same geographic area
+                (~35-40 sq km), but Chandni Chowk has over 12 times the number
+                of voters as Daman District!
+            </p>
+
+            <p
+                style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 0;"
+            >
+                The larger the constituency, the harder it is for the MP or MLA
+                to effectively engage with citizens, prioritize local issues,
+                and ensure meaningful representation. On the other hand, smaller
+                constituencies have a greater chance of communicating their
+                demands and concerns with their representative. Thus, the
+                quality of representative democracy depends on the size of the
+                constituency.
+            </p>
+
+            <div
+                class="notebook-quote stacked-paper"
+                style="margin-top: 40px; padding: 20px 25px;"
+            >
+                <h3
+                    style="color: #bf360c; margin-top: 0; font-family: 'Instrument Serif', serif; font-size: 1.8rem; display: flex; align-items: center; gap: 10px;"
+                >
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path
+                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                        ></path><line x1="12" y1="9" x2="12" y2="13"
+                        ></line><line x1="12" y1="17" x2="12.01" y2="17"
+                        ></line></svg
+                    >
+                    Note
+                </h3>
+                <p
+                    style="font-family: 'Inter', sans-serif; font-size: 1.05rem; line-height: 1.6; color: #333; margin-bottom: 0;"
+                >
+                    It is imperative to bear in mind the political implications
+                    of any delimitation exercise. Delimitation decides which
+                    territorial area and its people form a particular
+                    constituency. Thus, constituency boundaries can be drawn to
+                    advantage a particular political party in the elections.
+                </p>
+            </div>
+
+            <p
+                style="font-family: 'Instrument Serif', serif; font-size: 2.5rem; text-align: center; color: #3e2723; margin-top: 60px; margin-bottom: 20px;"
+            >
+                Did they cross the line?
+            </p>
+
+            <div
+                style="display: flex; gap: 40px; align-items: flex-start; max-width: 950px; margin: 40px auto; flex-wrap: wrap; justify-content: center;"
+            >
+                <div
+                    style="width: 320px; flex-shrink: 0; text-align: center; cursor: pointer; user-select: none; padding: 20px 15px; margin: 0;"
+                    onclick={nextStack}
+                    aria-hidden="true"
+                    class="notebook-quote stacked-paper"
+                >
+                    <h3
+                        style="font-family: 'Instrument Serif', serif; font-size: 1.6rem; color: #bf360c; margin-bottom: 15px; margin-top: 0; line-height: 1.1; min-height: 40px; display: flex; align-items: center; justify-content: center;"
+                    >
+                        {stackData[stackIndex].heading}
+                    </h3>
+
+                    <div
+                        style="width: 100%; position: relative; margin-bottom: 20px;"
+                    >
+                        <!-- Stack effect shadows underneath removed as per user request -->
+
+                        <div
+                            style="position: relative; z-index: 2; width: 100%; background: transparent;"
+                        >
+                            <img
+                                src={stackData[stackIndex].img}
+                                alt={stackData[stackIndex].heading}
+                                style="width: 100%; height: auto; display: block; mix-blend-mode: multiply; border-radius: 8px; pointer-events: none;"
+                            />
+                        </div>
+                    </div>
+
+                    <div
+                        style="min-height: 90px; display: flex; align-items: flex-start; justify-content: center;"
+                    >
+                        <p
+                            style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.4; color: #b71c1c; font-weight: 500; margin: 0;"
+                        >
+                            {stackData[stackIndex].caption}
+                        </p>
+                    </div>
+
+                    <div
+                        style="display: flex; gap: 8px; justify-content: center; margin-top: 10px;"
+                    >
+                        {#each stackData as _, i}
+                            <div
+                                style="width: 10px; height: 10px; border-radius: 50%; background: {i ===
+                                stackIndex
+                                    ? '#bf360c'
+                                    : '#d7ccc8'}; transition: background 0.3s ease;"
+                            ></div>
+                        {/each}
+                    </div>
+                </div>
+
+                <div style="flex: 1; min-width: 300px;">
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; text-align: left; margin-top: 0; margin-bottom: 20px;"
+                    >
+                        Suppose a political party A, B,and C is in power in a
+                        State. Traditionally, it happens to gain more
+                        votes/supporters in urban areas. Constituencies were
+                        redrawn in a way that more villages were merged with
+                        adjoining urban areas. This provided an electoral
+                        advantage to party A, B and C in the next election! The
+                        political party that knows the demography of the state
+                        is best placed to gain from delimitation this change
+                        from rural to urban was used by parties for electoral
+                        gains.
+                    </p>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; text-align: left; margin-bottom: 0;"
+                    >
+                        A process that has practical bearing on the democracy
+                        and political representation of the people in the
+                        Parliament should be done in a fair and transparent
+                        manner. However, not much information is available on
+                        the process that is followed for the Delimitation of
+                        Parliamentary and Assembly constituencies in India. This
+                        will ensure that the delimitation of electoral
+                        constituencies does not become a purely political
+                        exercise which is vulnerable to being used by any
+                        political party to its own advantage, particularly to
+                        gain favourable electoral outcomes.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="step"
+            data-step="46"
+            style="margin-top: 40px; margin-bottom: 15vh; text-align: justify; width: 240%; margin-left: -5%; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
+        >
+            <h2
+                style="font-family: 'Instrument Serif', serif; font-size: 2.5rem; color: #b71c1c; margin-bottom: 30px; border-bottom: 2px solid #b71c1c; padding-bottom: 10px; text-align: left;"
+            >
+                How is the Delimitation exercise carried out in India?
+            </h2>
+
+            <p
+                style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin-bottom: 25px; text-align: left;"
+            >
+                Even after so many years, the process of delimitation of
+                electoral constituencies from the start to end has remained
+                notably opaque. This is because the Constitution delineates only
+                the overarching principles that must be considered during the
+                delimitation process, while the detailed procedures for carrying
+                out the delimitation exercise are articulated in the
+                delimitation law enacted by Parliament before each delimitation
+                exercise.
+            </p>
+
+            <p
+                style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin-bottom: 25px; text-align: left;"
+            >
+                Given that the moratorium imposed on delimitation of
+                parliamentary constituencies in India will come to an end in
+                2026, it is important to understand the procedure that the next
+                delimitation exercise might follow.
+            </p>
+
+            <p
+                style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin-bottom: 40px; text-align: left;"
+            >
+                Towards this end, we attempted to study the process followed by
+                the Delimitation Commission in the last delimitation exercise
+                (2002-2008). Based on the available information, we have
+                conducted a mapping exercise to understand the stages involved
+                in the delimitation process and the stakeholders involved at
+                each stage.
+            </p>
+
+            <div style="display: flex; gap: 40px; align-items: flex-start; position: relative; margin-top: 40px;">
+                <div style="flex: 2; position: sticky; top: 25vh; z-index: 10; padding: 20px 0; background: transparent; aspect-ratio: 8/3; min-width: 0;">
+                    <svg viewBox="0 0 700 300" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: visible;">
+                        <!-- Thick hand-drawn style dashed line, using inline style to override any global CSS path fills -->
+                        <path d="M 40 230 C 90 130, 140 90, 190 90 C 250 90, 290 200, 350 200 C 400 200, 440 140, 480 140 C 520 140, 550 70, 580 70" style="fill: transparent !important;" stroke="#444" stroke-width="4" stroke-dasharray="14, 10" stroke-linecap="round" />
+                        
+                        <g style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" opacity="1" transform-origin="40 230" transform={activeProcess === 1 ? "scale(1.3)" : "scale(1)"}>
+                            <circle cx="40" cy="230" r="18" style="fill: #d32f2f !important;" />
+                            <text x="40" y="236" text-anchor="middle" fill="#fff" font-size="16" font-family="'Instrument Serif', serif" font-weight="bold">1</text>
+                        </g>
+                        <g style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" opacity="1" transform-origin="190 90" transform={activeProcess === 2 ? "scale(1.3)" : "scale(1)"}>
+                            <circle cx="190" cy="90" r="18" style="fill: #d32f2f !important;" />
+                            <text x="190" y="96" text-anchor="middle" fill="#fff" font-size="16" font-family="'Instrument Serif', serif" font-weight="bold">2</text>
+                        </g>
+                        <g style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" opacity="1" transform-origin="350 200" transform={activeProcess === 3 ? "scale(1.3)" : "scale(1)"}>
+                            <circle cx="350" cy="200" r="18" style="fill: #d32f2f !important;" />
+                            <text x="350" y="206" text-anchor="middle" fill="#fff" font-size="16" font-family="'Instrument Serif', serif" font-weight="bold">3</text>
+                        </g>
+                        <g style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" opacity="1" transform-origin="480 140" transform={activeProcess === 4 ? "scale(1.3)" : "scale(1)"}>
+                            <circle cx="480" cy="140" r="18" style="fill: #d32f2f !important;" />
+                            <text x="480" y="146" text-anchor="middle" fill="#fff" font-size="16" font-family="'Instrument Serif', serif" font-weight="bold">4</text>
+                        </g>
+                        <g style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" opacity="1" transform-origin="580 70" transform={activeProcess === 5 ? "scale(1.3)" : "scale(1)"}>
+                            <circle cx="580" cy="70" r="18" style="fill: #d32f2f !important;" />
+                            <text x="580" y="76" text-anchor="middle" fill="#fff" font-size="16" font-family="'Instrument Serif', serif" font-weight="bold">5</text>
+                        </g>
+                    </svg>
+                    
+                    <div style="position: absolute; left: 5%; top: 85%; transform: translate(-50%, -50%) {activeProcess === 1 ? 'scale(1.1)' : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);">
+                        CONDUCT OF CENSUS
+                    </div>
+                    <div style="position: absolute; left: 27%; top: 20%; transform: translate(-50%, -50%) {activeProcess === 2 ? 'scale(1.1)' : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 15px 255px 15px 225px/255px 15px 225px 15px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);">
+                        PUBLICATION OF RELEVANT<br/>POPULATION DATA
+                    </div>
+                    <div style="position: absolute; left: 50%; top: 80%; transform: translate(-50%, -50%) {activeProcess === 3 ? 'scale(1.1)' : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 225px 15px 255px 15px/15px 255px 15px 225px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);">
+                        A NEW<br/>DELIMITATION<br/>ACT
+                    </div>
+                    <div style="position: absolute; left: 68%; top: 46%; transform: translate(-50%, -50%) {activeProcess === 4 ? 'scale(1.1)' : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 255px 25px 225px 15px/15px 225px 15px 255px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);">
+                        CONDUCT OF<br/>DELIMITATION
+                    </div>
+                    <div style="position: absolute; left: 82%; top: 12%; transform: translate(-50%, -50%) {activeProcess === 5 ? 'scale(1.1)' : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 15px 225px 15px 255px/225px 15px 255px 15px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);">
+                        PUBLICATION OF<br/>DELIMITATION ORDER
+                    </div>
+                </div>
+
+                <div style="flex: 1; margin-top: 10vh; padding-bottom: 20vh; min-width: 300px;">
+                    <div class="process-trigger" data-process="1" style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess === 1 ? 1 : 0.3}; transition: opacity 0.4s;">
+                        <h3 style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #35b27e; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;">1. Conduct of Census</h3>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;">
+                            Before any delimitation can occur, a fresh census must be conducted to gather accurate and updated population data across all states and constituencies.
+                        </p>
+                    </div>
+
+                    <div class="process-trigger" data-process="2" style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess === 2 ? 1 : 0.3}; transition: opacity 0.4s;">
+                        <h3 style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #333; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;">2. Publication of Relevant Population Data</h3>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;">
+                            The official census figures are published by the government. This data provides the demographic bedrock upon which new constituency boundaries will be calculated.
+                        </p>
+                    </div>
+
+                    <div class="process-trigger" data-process="3" style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess === 3 ? 1 : 0.3}; transition: opacity 0.4s;">
+                        <h3 style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #d32f2f; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;">
+                            A. A new Delimitation Act
+                        </h3>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin-bottom: 0; text-align: left;">
+                            <mark style="background-color: #ffe082; padding: 2px 4px; border-radius: 2px;">Delimitations around the world are prompted by either the passage of a specified time period or a periodic event. Under the Constitution of India, delimitation is prompted by a periodic event - the Population Census.</mark> Article 82 of the Constitution of India mandates the conduct of a delimitation exercise after every census.
+                        </p>
+                    </div>
+
+                    <div class="process-trigger" data-process="4" style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess === 4 ? 1 : 0.3}; transition: opacity 0.4s;">
+                        <h3 style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #333; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;">4. Conduct of Delimitation</h3>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;">
+                            An independent Delimitation Commission is formed. It uses the published census data to redraw the boundaries of parliamentary and assembly constituencies to ensure roughly equal populations.
+                        </p>
+                    </div>
+
+                    <div class="process-trigger" data-process="5" style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; opacity: {activeProcess === 5 ? 1 : 0.3}; transition: opacity 0.4s;">
+                        <h3 style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #c9102f; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;">5. Publication of Delimitation Order</h3>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;">
+                            The final constituency boundaries are published as a legally binding order. This order dictates the electoral map for subsequent elections until the next delimitation exercise takes place.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="step" data-step="5">
             <h2>The Representation Gap</h2>
             <p>
@@ -512,18 +866,6 @@
                 style="font-style: italic; font-size: 0.9em; color: #795548; margin-top: 20px; border-top: 1px solid #e0dbce; padding-top: 10px;"
             >
                 Map: Literacy Rate (%)
-            </p>
-        </div>
-
-        <div class="step" data-step="10" data-chart="true">
-            <h2>The Impending Crisis</h2>
-            <p>
-                In a 543-seat Lok Sabha, the Hindi heartland's share could jump
-                from 42% to nearly 50%, enough to form a government virtually
-                unassisted. This forces a fundamental question: In a federal
-                union, should democratic representation purely be 'one person,
-                one vote', or must it balance demographic weight with economic
-                contribution?
             </p>
         </div>
     </div>

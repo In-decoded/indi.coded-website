@@ -3,11 +3,11 @@
     src: url("myriadproregular.woff") format("woff");
 }
 body {
-	background: rgb(242, 225, 175);
+	background: #F8DDA0;
 	font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
-#cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #fdf9f2; z-index:9999;}
+#cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #F8DDA0; z-index:9999;}
 .bimg{
 	top:0;left:0;
 	position: fixed;
@@ -331,6 +331,13 @@ body {
     text-align: center;
 }
 
+mark, .highlight {
+    background-color: #d9c394;
+    color: inherit;
+    padding: 0 4px;
+    border-radius: 0;
+}
+
 .intro-diagram img {
     max-width: 100%;
     height: auto;
@@ -446,6 +453,7 @@ body {
 /* Stacked Paper Styles */
 .notebook-quote {
     background-color: #f4f1ea;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
     border: 1px solid #e0dbce;
     padding: 25px 30px;
     margin: 40px auto;
@@ -525,9 +533,15 @@ body {
 .step {
     margin-bottom: 80vh;
     padding: 30px;
-    background: #ffffff;
-    border: 1px solid rgba(62, 39, 35, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background-color: #f4f1ea;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+    border: 1px solid #e0dbce;
+    box-shadow: 
+        0 1px 1px rgba(0,0,0,0.15), 
+        0 8px 0 -4px #f4f1ea, 
+        0 8px 1px -3px rgba(0,0,0,0.15), 
+        0 16px 0 -8px #f4f1ea, 
+        0 16px 1px -7px rgba(0,0,0,0.15);
     transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
     opacity: 0.3;
 }
@@ -746,4 +760,20 @@ a:hover {
         margin-top: 20vh;
         margin-bottom: 20vh;
     }
+}
+
+.compare-img {
+    mix-blend-mode: multiply;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.step.is-active .compare-img {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.compare-container img:nth-child(2) {
+    transition-delay: 0.15s;
 }
