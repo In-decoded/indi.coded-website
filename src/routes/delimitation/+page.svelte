@@ -910,10 +910,15 @@
                         <p
                             style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;"
                         >
-                            Before any delimitation can occur, a fresh census
-                            must be conducted to gather accurate and updated
-                            population data across all states and
-                            constituencies.
+                            Delimitations around the world are prompted by
+                            either the passage of a specified time period or a
+                            periodic event. Under the Constitution of India,
+                            delimitation is prompted by a periodic event - the
+                            Population Census. Before any delimitation can
+                            occur, a fresh census must be conducted to gather
+                            accurate and updated population data across all
+                            states and constituencies. <span class="handdrawn-box">Article 82<span class="tooltip-text">Article 82 provides for the readjustment of Lok Sabha seats and territorial constituencies to the States after every census.</span></span> of the Constitution of India mandates the
+                            conduct of a delimitation exercise after every census.
                         </p>
                     </div>
 
