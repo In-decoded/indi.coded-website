@@ -454,7 +454,18 @@
                 lacking transparency and citizen participation.
             </p>
             <p>
-                If post-2026 delimitation relies solely on population, UP could
+                If <span class="handdrawn-box"
+                    >post-2026<span class="tooltip-text"
+                        >The next delimitation is expected to be based on the
+                        <a
+                            href="https://en.wikipedia.org/wiki/2027_census_of_India"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style="color: inherit; text-decoration: underline;"
+                            >2027 census of India</a
+                        >.</span
+                    ></span
+                > delimitation relies solely on population, UP could
                 gain 10 seats while Tamil Nadu loses 8. This massive power shift
                 risks skewing national policies toward more populous North
                 Indian states.
