@@ -50,7 +50,12 @@
 </script>
 
 <section id="intro">
-    <h1>Where do we draw the line?</h1>
+    <div style="max-width: 1000px; margin: 0 auto 40px auto; text-align: center;">
+        <img src="/delimitation-hero.jpg" alt="Where do we draw the line? A Visual Journey Through India's Delimitation Dilemma" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
+        <p style="font-family: 'Instrument Serif', serif; font-size: 1.6rem; color: #5d4037; margin-top: 20px; font-style: italic;">
+            by Arnab Jena
+        </p>
+    </div>
     <div class="intro-text">
         <p>
             A key function of democracy is to ensure that political
