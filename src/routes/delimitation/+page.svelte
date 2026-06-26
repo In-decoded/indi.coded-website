@@ -484,7 +484,7 @@
         <div
             class="step"
             data-step="45"
-            style="margin: 30vh 0; text-align: justify; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
+            style="margin: 30vh 0; text-align: justify; width: 220%; margin-left: 15%; box-sizing: border-box; z-index: 100; background: #f4f1ea; border: none; box-shadow: none; padding: 40px 0; transform: none !important; opacity: 1 !important;"
         >
             <p
                 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 20px;"
