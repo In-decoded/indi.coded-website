@@ -957,15 +957,15 @@
                     style="flex: 1.1; margin-top: 10vh; padding-bottom: 20vh; min-width: 400px;"
                 >
                     <div
-                        class="process-trigger"
+                        class="process-trigger notebook-quote"
                         data-process="1"
-                        style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess ===
+                        style="max-width: 100%; padding: 30px 40px; min-height: 180px; margin: 0 0 40vh 0; opacity: {activeProcess ===
                         1
                             ? 1
                             : 0.3}; transition: opacity 0.4s;"
                     >
                         <h3
-                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #35b27e; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
+                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #3e2723; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
                         >
                             1. Conduct of Census
                         </h3>
@@ -1072,15 +1072,15 @@
                     </div>
 
                     <div
-                        class="process-trigger"
+                        class="process-trigger notebook-quote"
                         data-process="2"
-                        style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess ===
+                        style="max-width: 100%; padding: 30px 40px; min-height: 180px; margin: 0 0 40vh 0; opacity: {activeProcess ===
                         2
                             ? 1
                             : 0.3}; transition: opacity 0.4s;"
                     >
                         <h3
-                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #333; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
+                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #3e2723; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
                         >
                             2. Publication of Relevant Population Data
                         </h3>
@@ -1095,15 +1095,15 @@
                     </div>
 
                     <div
-                        class="process-trigger"
+                        class="process-trigger notebook-quote"
                         data-process="3"
-                        style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess ===
+                        style="max-width: 100%; padding: 30px 40px; min-height: 180px; margin: 0 0 40vh 0; opacity: {activeProcess ===
                         3
                             ? 1
                             : 0.3}; transition: opacity 0.4s;"
                     >
                         <h3
-                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #d32f2f; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
+                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #3e2723; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
                         >
                             A. A new Delimitation Act
                         </h3>
@@ -1123,15 +1123,15 @@
                     </div>
 
                     <div
-                        class="process-trigger"
+                        class="process-trigger notebook-quote"
                         data-process="4"
-                        style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess ===
+                        style="max-width: 100%; padding: 30px 40px; min-height: 180px; margin: 0 0 40vh 0; opacity: {activeProcess ===
                         4
                             ? 1
                             : 0.3}; transition: opacity 0.4s;"
                     >
                         <h3
-                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #333; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
+                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #3e2723; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
                         >
                             4. Conduct of Delimitation
                         </h3>
@@ -1146,15 +1146,15 @@
                     </div>
 
                     <div
-                        class="process-trigger"
+                        class="process-trigger notebook-quote"
                         data-process="5"
-                        style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; opacity: {activeProcess ===
+                        style="max-width: 100%; padding: 30px 40px; min-height: 180px; margin: 0 0 40vh 0; opacity: {activeProcess ===
                         5
                             ? 1
                             : 0.3}; transition: opacity 0.4s;"
                     >
                         <h3
-                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #c9102f; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
+                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #3e2723; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
                         >
                             5. Publication of Delimitation Order
                         </h3>
