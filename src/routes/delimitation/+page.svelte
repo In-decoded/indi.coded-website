@@ -661,10 +661,10 @@
         <div
             class="step"
             data-step="46"
-            style="margin-top: 40px; margin-bottom: 15vh; text-align: justify; width: 240%; margin-left: -5%; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
+            style="margin-top: -50vh; margin-bottom: 15vh; text-align: justify; width: 240%; margin-left: -5%; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
         >
             <h2
-                style="font-family: 'Instrument Serif', serif; font-size: 2.5rem; color: #b71c1c; margin-bottom: 30px; border-bottom: 2px solid #b71c1c; padding-bottom: 10px; text-align: left;"
+                style="font-family: 'Instrument Serif', serif; font-size: 2.5rem; color: #b71c1c; margin-bottom: 30px; text-align: left;"
             >
                 How is the Delimitation exercise carried out in India?
             </h2>
