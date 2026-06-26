@@ -768,6 +768,12 @@
                         viewBox="0 0 700 300"
                         style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: visible;"
                     >
+                        <defs>
+                            <filter id="handdrawn-circle" x="-20%" y="-20%" width="140%" height="140%">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise" />
+                                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+                            </filter>
+                        </defs>
                         <!-- Thick hand-drawn style dashed line, using inline style to override any global CSS path fills -->
                         <path
                             d="M 40 230 C 90 130, 140 90, 190 90 C 250 90, 290 200, 350 200 C 400 200, 440 140, 480 140 C 520 140, 550 70, 580 70"
@@ -791,6 +797,7 @@
                                 cy="230"
                                 r="18"
                                 style="fill: #d32f2f !important;"
+                                filter="url(#handdrawn-circle)"
                             />
                             <text
                                 x="40"
@@ -815,6 +822,7 @@
                                 cy="90"
                                 r="18"
                                 style="fill: #d32f2f !important;"
+                                filter="url(#handdrawn-circle)"
                             />
                             <text
                                 x="190"
@@ -839,6 +847,7 @@
                                 cy="200"
                                 r="18"
                                 style="fill: #d32f2f !important;"
+                                filter="url(#handdrawn-circle)"
                             />
                             <text
                                 x="350"
@@ -863,6 +872,7 @@
                                 cy="140"
                                 r="18"
                                 style="fill: #d32f2f !important;"
+                                filter="url(#handdrawn-circle)"
                             />
                             <text
                                 x="480"
@@ -887,6 +897,7 @@
                                 cy="70"
                                 r="18"
                                 style="fill: #d32f2f !important;"
+                                filter="url(#handdrawn-circle)"
                             />
                             <text
                                 x="580"
