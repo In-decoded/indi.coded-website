@@ -946,6 +946,42 @@
                             states and constituencies. <span class="handdrawn-box">Article 82<span class="tooltip-text">Article 82 provides for the readjustment of Lok Sabha seats and territorial constituencies to the States after every census.</span></span> of the Constitution of India mandates the
                             conduct of a delimitation exercise after every census.
                         </p>
+                        <p
+                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 20px 0 0 0; text-align: left;"
+                        >
+                            After the completion of the Census, the Parliament enacts a Delimitation Act for the purposes of redrawing the boundaries of electoral constituencies of the Parliament and of the State Assemblies.
+                        </p>
+                        <p
+                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 20px 0 30px 0; text-align: left;"
+                        >
+                            This new Delimitation Act repeals the existing/former Act on Delimitation. For instance, the Delimitation Act 1971 has repealed the Delimitation Act of 1961.
+                        </p>
+                        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 1rem; color: #333; text-align: left; background: #fff; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;">STAGE</th>
+                                    <th style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;">STAKEHOLDERS INVOLVED</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">Completion of the Population Census based on the Census Act, 1948 and the Census Rules, 1990</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">The Office of the Registrar General and Census Commissioner, Ministry of Home Affairs</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">The Delimitation Act is drafted</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">MPs and bureaucrats</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">The Delimitation Act is passed in the Parliament.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">MPs + President of India</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">Repeal of the older delimitation Act</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">Parliament</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div
