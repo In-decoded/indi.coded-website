@@ -692,7 +692,7 @@
         <div
             class="step"
             data-step="46"
-            style="margin: 15vh auto; max-width: 800px; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
+            style="margin: 15vh auto; max-width: 1150px; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
         >
             <h2
                 style="font-family: 'Instrument Serif', serif; font-size: 2.5rem; color: #b71c1c; margin-bottom: 30px; text-align: left;"
@@ -734,10 +734,10 @@
             </p>
 
             <div
-                style="display: flex; gap: 40px; align-items: flex-start; position: relative; margin-top: 40px;"
+                style="display: flex; gap: 60px; align-items: flex-start; position: relative; margin-top: 40px;"
             >
                 <div
-                    style="flex: 2; position: sticky; top: 25vh; z-index: 10; padding: 20px 0; background: transparent; aspect-ratio: 8/3; min-width: 0;"
+                    style="flex: 1.2; position: sticky; top: 25vh; z-index: 10; padding: 20px 0; background: transparent; aspect-ratio: 8/3; min-width: 0;"
                 >
                     <svg
                         viewBox="0 0 700 300"
@@ -918,7 +918,7 @@
                 </div>
 
                 <div
-                    style="flex: 1; margin-top: 10vh; padding-bottom: 20vh; min-width: 300px;"
+                    style="flex: 1.1; margin-top: 10vh; padding-bottom: 20vh; min-width: 400px;"
                 >
                     <div
                         class="process-trigger"
