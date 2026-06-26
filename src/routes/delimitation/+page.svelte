@@ -481,13 +481,16 @@
             </p>
         </div>
 
+        </div> <!-- End of first scrolly-text -->
+
+        <div style="width: 100%; position: relative; z-index: 10;">
         <div
             class="step"
             data-step="45"
-            style="margin: 15vh 0 30vh 0; text-align: justify; width: 220%; margin-left: 15%; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
+            style="margin: 15vh auto 30vh auto; max-width: 950px; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
         >
-            <div style="position: relative; width: 100%;">
-                <div style="width: 45%;">
+            <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+                <div style="flex: 1.2; min-width: 300px; text-align: left;">
                     <p
                         style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 20px;"
                     >
@@ -571,7 +574,7 @@
                     </div>
                 </div>
 
-                <div style="position: absolute; right: 10%; top: 50px; width: 350px;">
+                <div style="flex: 0.8; margin-top: 20px;">
                     <div
                         class="notebook-quote stacked-paper"
                         style="padding: 25px 30px; transform: rotate(1.5deg); background: #fdf9f2;"
@@ -688,7 +691,7 @@
         <div
             class="step"
             data-step="46"
-            style="margin-top: -20vh; margin-bottom: 15vh; text-align: justify; width: 240%; margin-left: -5%; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
+            style="margin: 15vh auto; max-width: 950px; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
         >
             <h2
                 style="font-family: 'Instrument Serif', serif; font-size: 2.5rem; color: #b71c1c; margin-bottom: 30px; text-align: left;"
@@ -1044,6 +1047,9 @@
             </div>
         </div>
 
+        </div> <!-- End of full-width centered container -->
+
+        <div class="scrolly-text" style="margin-top: 0; z-index: 10;">
         <div class="step" data-step="5">
             <h2>The Representation Gap</h2>
             <p>
