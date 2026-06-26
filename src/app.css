@@ -3,11 +3,11 @@
     src: url("myriadproregular.woff") format("woff");
 }
 body {
-	background: rgb(242, 225, 175);
+	background: #F2E1AF;
 	font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
-#cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #fdf9f2; z-index:9999;}
+#cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #F2E1AF; z-index:9999;}
 .bimg{
 	top:0;left:0;
 	position: fixed;

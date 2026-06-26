@@ -50,9 +50,17 @@
 </script>
 
 <section id="intro">
-    <div style="max-width: 1000px; margin: 0 auto 40px auto; text-align: center;">
-        <img src="/delimitation-hero.png" alt="Where do we draw the line? A Visual Journey Through India's Delimitation Dilemma" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
-        <p style="font-family: 'Instrument Serif', serif; font-size: 1.6rem; color: #5d4037; margin-top: 20px; font-style: italic; text-align: center;">
+    <div
+        style="max-width: 1000px; margin: 0 auto 40px auto; text-align: center;"
+    >
+        <img
+            src="/delimitation-hero.png"
+            alt="Where do we draw the line? A Visual Journey Through India's Delimitation Dilemma"
+            style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"
+        />
+        <p
+            style="font-family: 'Instrument Serif', serif; font-size: 1.6rem; color: #5d4037; margin-top: 20px; font-style: italic; text-align: center;"
+        >
             by Arnab Jena
         </p>
     </div>
@@ -485,13 +493,16 @@
                 Map: Projected Lok Sabha Seats (Post-2026)
             </p>
         </div>
+    </div>
+    <!-- End of first scrolly-text -->
 
-        </div> <!-- End of first scrolly-text -->
-
-        <div style="width: 100%; position: relative; z-index: 10;">
-        
+    <div style="width: 100%; position: relative; z-index: 10;">
         <!-- Ghost step to trigger map fade out early -->
-        <div class="step" data-step="45" style="height: 1px; margin-top: -60vh; margin-bottom: 60vh; opacity: 0; pointer-events: none; border: none; box-shadow: none;"></div>
+        <div
+            class="step"
+            data-step="45"
+            style="height: 1px; margin-top: -60vh; margin-bottom: 60vh; opacity: 0; pointer-events: none; border: none; box-shadow: none;"
+        ></div>
 
         <div
             class="step"
@@ -501,11 +512,17 @@
             <p
                 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 20px; text-align: justify;"
             >
-                <span class="handdrawn-box">Representative democracy<span class="tooltip-text">A system of government where citizens elect representatives to make laws and policies on their behalf.</span></span> is calculated in terms of the ability
-                to influence the decision of the representative (i.e., MP or
-                MLA). When an MP or MLA represents a very large population, it
-                becomes difficult for individual citizens to have their concerns
-                heard, let alone see them translated into concrete actions.
+                <span class="handdrawn-box"
+                    >Representative democracy<span class="tooltip-text"
+                        >A system of government where citizens elect
+                        representatives to make laws and policies on their
+                        behalf.</span
+                    ></span
+                > is calculated in terms of the ability to influence the decision
+                of the representative (i.e., MP or MLA). When an MP or MLA represents
+                a very large population, it becomes difficult for individual citizens
+                to have their concerns heard, let alone see them translated into
+                concrete actions.
             </p>
 
             <div
@@ -581,7 +598,9 @@
             </div>
 
             <!-- Absolute positioned Trivia box just like Did You Know -->
-            <div style="position: absolute; right: -300px; top: 10%; width: 280px; z-index: 10;">
+            <div
+                style="position: absolute; right: -300px; top: 10%; width: 280px; z-index: 10;"
+            >
                 <div
                     class="notebook-quote stacked-paper"
                     style="padding: 25px 25px; transform: rotate(1.5deg); background: #fdf9f2; box-shadow: 2px 5px 15px rgba(0,0,0,0.1);"
@@ -594,7 +613,9 @@
                     <p
                         style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.5; color: #333; margin-bottom: 0;"
                     >
-                        India is the world's largest representative democracy, with over 900 million eligible voters participating in its electoral process!
+                        India is the world's largest representative democracy,
+                        with over 900 million eligible voters participating in
+                        its electoral process!
                     </p>
                 </div>
             </div>
@@ -664,16 +685,15 @@
                     <p
                         style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; text-align: left; margin-top: 0; margin-bottom: 20px;"
                     >
-                        Suppose a political party A, B,and C is in power in a
-                        State. Traditionally, it happens to gain more
-                        votes/supporters in urban areas. Constituencies were
-                        redrawn in a way that more villages were merged with
-                        adjoining urban areas. This provided an electoral
-                        advantage to party A, B and C in the next election! The
-                        political party that knows the demography of the state
-                        is best placed to gain from delimitation this change
-                        from rural to urban was used by parties for electoral
-                        gains.
+                        Suppose a political party is in power in a State.
+                        Traditionally, it happens to gain more votes/supporters
+                        in rural areas. Constituencies were redrawn in a way
+                        that more villages were merged with adjoining rural
+                        areas. This provided an electoral advantage to the party
+                        in the next election! The political party that knows the
+                        demography of the state is best placed to gain from
+                        delimitation this change from rural to urban was used by
+                        parties for electoral gains.
                     </p>
                     <p
                         style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; text-align: left; margin-bottom: 0;"
@@ -948,42 +968,93 @@
                             Population Census. Before any delimitation can
                             occur, a fresh census must be conducted to gather
                             accurate and updated population data across all
-                            states and constituencies. <span class="handdrawn-box">Article 82<span class="tooltip-text">Article 82 provides for the readjustment of Lok Sabha seats and territorial constituencies to the States after every census.</span></span> of the Constitution of India mandates the
-                            conduct of a delimitation exercise after every census.
+                            states and constituencies. <span
+                                class="handdrawn-box"
+                                >Article 82<span class="tooltip-text"
+                                    >Article 82 provides for the readjustment of
+                                    Lok Sabha seats and territorial
+                                    constituencies to the States after every
+                                    census.</span
+                                ></span
+                            > of the Constitution of India mandates the conduct of
+                            a delimitation exercise after every census.
                         </p>
                         <p
                             style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 20px 0 0 0; text-align: left;"
                         >
-                            After the completion of the Census, the Parliament enacts a Delimitation Act for the purposes of redrawing the boundaries of electoral constituencies of the Parliament and of the State Assemblies.
+                            After the completion of the Census, the Parliament
+                            enacts a Delimitation Act for the purposes of
+                            redrawing the boundaries of electoral constituencies
+                            of the Parliament and of the State Assemblies.
                         </p>
                         <p
                             style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 20px 0 30px 0; text-align: left;"
                         >
-                            This new Delimitation Act repeals the existing/former Act on Delimitation. For instance, the Delimitation Act 1971 has repealed the Delimitation Act of 1961.
+                            This new Delimitation Act repeals the
+                            existing/former Act on Delimitation. For instance,
+                            the Delimitation Act 1971 has repealed the
+                            Delimitation Act of 1961.
                         </p>
-                        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 1rem; color: #333; text-align: left; background: #fff; margin-top: 20px;">
+                        <table
+                            style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 1rem; color: #333; text-align: left; background: #fff; margin-top: 20px;"
+                        >
                             <thead>
                                 <tr>
-                                    <th style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;">STAGE</th>
-                                    <th style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;">STAKEHOLDERS INVOLVED</th>
+                                    <th
+                                        style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;"
+                                        >STAGE</th
+                                    >
+                                    <th
+                                        style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;"
+                                        >STAKEHOLDERS INVOLVED</th
+                                    >
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style="padding: 12px; border: 2px solid #333;">Completion of the Population Census based on the Census Act, 1948 and the Census Rules, 1990</td>
-                                    <td style="padding: 12px; border: 2px solid #333;">The Office of the Registrar General and Census Commissioner, Ministry of Home Affairs</td>
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >Completion of the Population Census
+                                        based on the Census Act, 1948 and the
+                                        Census Rules, 1990</td
+                                    >
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >The Office of the Registrar General and
+                                        Census Commissioner, Ministry of Home
+                                        Affairs</td
+                                    >
                                 </tr>
                                 <tr>
-                                    <td style="padding: 12px; border: 2px solid #333;">The Delimitation Act is drafted</td>
-                                    <td style="padding: 12px; border: 2px solid #333;">MPs and bureaucrats</td>
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >The Delimitation Act is drafted</td
+                                    >
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >MPs and bureaucrats</td
+                                    >
                                 </tr>
                                 <tr>
-                                    <td style="padding: 12px; border: 2px solid #333;">The Delimitation Act is passed in the Parliament.</td>
-                                    <td style="padding: 12px; border: 2px solid #333;">MPs + President of India</td>
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >The Delimitation Act is passed in the
+                                        Parliament.</td
+                                    >
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >MPs + President of India</td
+                                    >
                                 </tr>
                                 <tr>
-                                    <td style="padding: 12px; border: 2px solid #333;">Repeal of the older delimitation Act</td>
-                                    <td style="padding: 12px; border: 2px solid #333;">Parliament</td>
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >Repeal of the older delimitation Act</td
+                                    >
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >Parliament</td
+                                    >
                                 </tr>
                             </tbody>
                         </table>
@@ -1088,10 +1159,10 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!-- End of full-width centered container -->
 
-        </div> <!-- End of full-width centered container -->
-
-        <div class="scrolly-text" style="margin-top: 0; z-index: 10;">
+    <div class="scrolly-text" style="margin-top: 0; z-index: 10;">
         <div class="step" data-step="5">
             <h2>The Representation Gap</h2>
             <p>
