@@ -484,9 +484,10 @@
         </div> <!-- End of first scrolly-text -->
 
         <div style="width: 100%; position: relative; z-index: 10;">
-        </div> <!-- End of first scrolly-text -->
+        
+        <!-- Ghost step to trigger map fade out early -->
+        <div class="step" data-step="45" style="height: 1px; margin-top: -60vh; margin-bottom: 60vh; opacity: 0; pointer-events: none; border: none; box-shadow: none;"></div>
 
-        <div style="width: 100%; position: relative; z-index: 10;">
         <div
             class="step"
             data-step="45"
