@@ -1174,3 +1174,5 @@
     <p>Data is approximate and used for illustrative purposes.</p>
     <a href="/">Back to Indecoded</a>
 </section>
+
+<svelte:window on:contextmenu|preventDefault />
