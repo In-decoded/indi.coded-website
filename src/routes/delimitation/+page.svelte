@@ -4,15 +4,20 @@
 
     onMount(() => {
         initDelimitation();
-        const processObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    activeProcess = parseInt(entry.target.dataset.process);
-                }
-            });
-        }, { rootMargin: "-40% 0px -40% 0px" });
-        
-        document.querySelectorAll('.process-trigger').forEach(el => processObserver.observe(el));
+        const processObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        activeProcess = parseInt(entry.target.dataset.process);
+                    }
+                });
+            },
+            { rootMargin: "-40% 0px -40% 0px" },
+        );
+
+        document
+            .querySelectorAll(".process-trigger")
+            .forEach((el) => processObserver.observe(el));
     });
 
     let stackIndex = $state(0);
@@ -661,7 +666,7 @@
         <div
             class="step"
             data-step="46"
-            style="margin-top: -50vh; margin-bottom: 15vh; text-align: justify; width: 240%; margin-left: -5%; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
+            style="margin-top: -20vh; margin-bottom: 15vh; text-align: justify; width: 240%; margin-left: -5%; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
         >
             <h2
                 style="font-family: 'Instrument Serif', serif; font-size: 2.5rem; color: #b71c1c; margin-bottom: 30px; text-align: left;"
@@ -702,86 +707,310 @@
                 each stage.
             </p>
 
-            <div style="display: flex; gap: 40px; align-items: flex-start; position: relative; margin-top: 40px;">
-                <div style="flex: 2; position: sticky; top: 25vh; z-index: 10; padding: 20px 0; background: transparent; aspect-ratio: 8/3; min-width: 0;">
-                    <svg viewBox="0 0 700 300" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: visible;">
+            <div
+                style="display: flex; gap: 40px; align-items: flex-start; position: relative; margin-top: 40px;"
+            >
+                <div
+                    style="flex: 2; position: sticky; top: 25vh; z-index: 10; padding: 20px 0; background: transparent; aspect-ratio: 8/3; min-width: 0;"
+                >
+                    <svg
+                        viewBox="0 0 700 300"
+                        style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: visible;"
+                    >
                         <!-- Thick hand-drawn style dashed line, using inline style to override any global CSS path fills -->
-                        <path d="M 40 230 C 90 130, 140 90, 190 90 C 250 90, 290 200, 350 200 C 400 200, 440 140, 480 140 C 520 140, 550 70, 580 70" style="fill: transparent !important;" stroke="#444" stroke-width="4" stroke-dasharray="14, 10" stroke-linecap="round" />
-                        
-                        <g style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" opacity="1" transform-origin="40 230" transform={activeProcess === 1 ? "scale(1.3)" : "scale(1)"}>
-                            <circle cx="40" cy="230" r="18" style="fill: #d32f2f !important;" />
-                            <text x="40" y="236" text-anchor="middle" fill="#fff" font-size="16" font-family="'Instrument Serif', serif" font-weight="bold">1</text>
+                        <path
+                            d="M 40 230 C 90 130, 140 90, 190 90 C 250 90, 290 200, 350 200 C 400 200, 440 140, 480 140 C 520 140, 550 70, 580 70"
+                            style="fill: transparent !important;"
+                            stroke="#444"
+                            stroke-width="4"
+                            stroke-dasharray="14, 10"
+                            stroke-linecap="round"
+                        />
+
+                        <g
+                            style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
+                            opacity="1"
+                            transform-origin="40 230"
+                            transform={activeProcess === 1
+                                ? "scale(1.3)"
+                                : "scale(1)"}
+                        >
+                            <circle
+                                cx="40"
+                                cy="230"
+                                r="18"
+                                style="fill: #d32f2f !important;"
+                            />
+                            <text
+                                x="40"
+                                y="236"
+                                text-anchor="middle"
+                                fill="#fff"
+                                font-size="16"
+                                font-family="'Instrument Serif', serif"
+                                font-weight="bold">1</text
+                            >
                         </g>
-                        <g style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" opacity="1" transform-origin="190 90" transform={activeProcess === 2 ? "scale(1.3)" : "scale(1)"}>
-                            <circle cx="190" cy="90" r="18" style="fill: #d32f2f !important;" />
-                            <text x="190" y="96" text-anchor="middle" fill="#fff" font-size="16" font-family="'Instrument Serif', serif" font-weight="bold">2</text>
+                        <g
+                            style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
+                            opacity="1"
+                            transform-origin="190 90"
+                            transform={activeProcess === 2
+                                ? "scale(1.3)"
+                                : "scale(1)"}
+                        >
+                            <circle
+                                cx="190"
+                                cy="90"
+                                r="18"
+                                style="fill: #d32f2f !important;"
+                            />
+                            <text
+                                x="190"
+                                y="96"
+                                text-anchor="middle"
+                                fill="#fff"
+                                font-size="16"
+                                font-family="'Instrument Serif', serif"
+                                font-weight="bold">2</text
+                            >
                         </g>
-                        <g style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" opacity="1" transform-origin="350 200" transform={activeProcess === 3 ? "scale(1.3)" : "scale(1)"}>
-                            <circle cx="350" cy="200" r="18" style="fill: #d32f2f !important;" />
-                            <text x="350" y="206" text-anchor="middle" fill="#fff" font-size="16" font-family="'Instrument Serif', serif" font-weight="bold">3</text>
+                        <g
+                            style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
+                            opacity="1"
+                            transform-origin="350 200"
+                            transform={activeProcess === 3
+                                ? "scale(1.3)"
+                                : "scale(1)"}
+                        >
+                            <circle
+                                cx="350"
+                                cy="200"
+                                r="18"
+                                style="fill: #d32f2f !important;"
+                            />
+                            <text
+                                x="350"
+                                y="206"
+                                text-anchor="middle"
+                                fill="#fff"
+                                font-size="16"
+                                font-family="'Instrument Serif', serif"
+                                font-weight="bold">3</text
+                            >
                         </g>
-                        <g style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" opacity="1" transform-origin="480 140" transform={activeProcess === 4 ? "scale(1.3)" : "scale(1)"}>
-                            <circle cx="480" cy="140" r="18" style="fill: #d32f2f !important;" />
-                            <text x="480" y="146" text-anchor="middle" fill="#fff" font-size="16" font-family="'Instrument Serif', serif" font-weight="bold">4</text>
+                        <g
+                            style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
+                            opacity="1"
+                            transform-origin="480 140"
+                            transform={activeProcess === 4
+                                ? "scale(1.3)"
+                                : "scale(1)"}
+                        >
+                            <circle
+                                cx="480"
+                                cy="140"
+                                r="18"
+                                style="fill: #d32f2f !important;"
+                            />
+                            <text
+                                x="480"
+                                y="146"
+                                text-anchor="middle"
+                                fill="#fff"
+                                font-size="16"
+                                font-family="'Instrument Serif', serif"
+                                font-weight="bold">4</text
+                            >
                         </g>
-                        <g style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" opacity="1" transform-origin="580 70" transform={activeProcess === 5 ? "scale(1.3)" : "scale(1)"}>
-                            <circle cx="580" cy="70" r="18" style="fill: #d32f2f !important;" />
-                            <text x="580" y="76" text-anchor="middle" fill="#fff" font-size="16" font-family="'Instrument Serif', serif" font-weight="bold">5</text>
+                        <g
+                            style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
+                            opacity="1"
+                            transform-origin="580 70"
+                            transform={activeProcess === 5
+                                ? "scale(1.3)"
+                                : "scale(1)"}
+                        >
+                            <circle
+                                cx="580"
+                                cy="70"
+                                r="18"
+                                style="fill: #d32f2f !important;"
+                            />
+                            <text
+                                x="580"
+                                y="76"
+                                text-anchor="middle"
+                                fill="#fff"
+                                font-size="16"
+                                font-family="'Instrument Serif', serif"
+                                font-weight="bold">5</text
+                            >
                         </g>
                     </svg>
-                    
-                    <div style="position: absolute; left: 5%; top: 94%; transform: translate(-50%, -50%) {activeProcess === 1 ? 'scale(1.1)' : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);">
+
+                    <div
+                        style="position: absolute; left: 5%; top: 94%; transform: translate(-50%, -50%) {activeProcess ===
+                        1
+                            ? 'scale(1.1)'
+                            : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);"
+                    >
                         CONDUCT OF CENSUS
                     </div>
-                    <div style="position: absolute; left: 27%; top: 10%; transform: translate(-50%, -50%) {activeProcess === 2 ? 'scale(1.1)' : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 15px 255px 15px 225px/255px 15px 225px 15px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);">
-                        PUBLICATION OF RELEVANT<br/>POPULATION DATA
+                    <div
+                        style="position: absolute; left: 27%; top: 10%; transform: translate(-50%, -50%) {activeProcess ===
+                        2
+                            ? 'scale(1.1)'
+                            : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 15px 255px 15px 225px/255px 15px 225px 15px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);"
+                    >
+                        PUBLICATION OF RELEVANT<br />POPULATION DATA
                     </div>
-                    <div style="position: absolute; left: 50%; top: 88%; transform: translate(-50%, -50%) {activeProcess === 3 ? 'scale(1.1)' : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 225px 15px 255px 15px/15px 255px 15px 225px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);">
-                        A NEW<br/>DELIMITATION<br/>ACT
+                    <div
+                        style="position: absolute; left: 50%; top: 88%; transform: translate(-50%, -50%) {activeProcess ===
+                        3
+                            ? 'scale(1.1)'
+                            : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 225px 15px 255px 15px/15px 255px 15px 225px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);"
+                    >
+                        A NEW<br />DELIMITATION<br />ACT
                     </div>
-                    <div style="position: absolute; left: 68%; top: 25%; transform: translate(-50%, -50%) {activeProcess === 4 ? 'scale(1.1)' : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 255px 25px 225px 15px/15px 225px 15px 255px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);">
-                        CONDUCT OF<br/>DELIMITATION
+                    <div
+                        style="position: absolute; left: 68%; top: 25%; transform: translate(-50%, -50%) {activeProcess ===
+                        4
+                            ? 'scale(1.1)'
+                            : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 255px 25px 225px 15px/15px 225px 15px 255px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);"
+                    >
+                        CONDUCT OF<br />DELIMITATION
                     </div>
-                    <div style="position: absolute; left: 82%; top: -2%; transform: translate(-50%, -50%) {activeProcess === 5 ? 'scale(1.1)' : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 15px 225px 15px 255px/225px 15px 255px 15px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);">
-                        PUBLICATION OF<br/>DELIMITATION ORDER
+                    <div
+                        style="position: absolute; left: 82%; top: -2%; transform: translate(-50%, -50%) {activeProcess ===
+                        5
+                            ? 'scale(1.1)'
+                            : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 15px 225px 15px 255px/225px 15px 255px 15px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);"
+                    >
+                        PUBLICATION OF<br />DELIMITATION ORDER
                     </div>
                 </div>
 
-                <div style="flex: 1; margin-top: 10vh; padding-bottom: 20vh; min-width: 300px;">
-                    <div class="process-trigger" data-process="1" style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess === 1 ? 1 : 0.3}; transition: opacity 0.4s;">
-                        <h3 style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #35b27e; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;">1. Conduct of Census</h3>
-                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;">
-                            Before any delimitation can occur, a fresh census must be conducted to gather accurate and updated population data across all states and constituencies.
+                <div
+                    style="flex: 1; margin-top: 10vh; padding-bottom: 20vh; min-width: 300px;"
+                >
+                    <div
+                        class="process-trigger"
+                        data-process="1"
+                        style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess ===
+                        1
+                            ? 1
+                            : 0.3}; transition: opacity 0.4s;"
+                    >
+                        <h3
+                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #35b27e; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
+                        >
+                            1. Conduct of Census
+                        </h3>
+                        <p
+                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;"
+                        >
+                            Before any delimitation can occur, a fresh census
+                            must be conducted to gather accurate and updated
+                            population data across all states and
+                            constituencies.
                         </p>
                     </div>
 
-                    <div class="process-trigger" data-process="2" style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess === 2 ? 1 : 0.3}; transition: opacity 0.4s;">
-                        <h3 style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #333; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;">2. Publication of Relevant Population Data</h3>
-                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;">
-                            The official census figures are published by the government. This data provides the demographic bedrock upon which new constituency boundaries will be calculated.
+                    <div
+                        class="process-trigger"
+                        data-process="2"
+                        style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess ===
+                        2
+                            ? 1
+                            : 0.3}; transition: opacity 0.4s;"
+                    >
+                        <h3
+                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #333; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
+                        >
+                            2. Publication of Relevant Population Data
+                        </h3>
+                        <p
+                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;"
+                        >
+                            The official census figures are published by the
+                            government. This data provides the demographic
+                            bedrock upon which new constituency boundaries will
+                            be calculated.
                         </p>
                     </div>
 
-                    <div class="process-trigger" data-process="3" style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess === 3 ? 1 : 0.3}; transition: opacity 0.4s;">
-                        <h3 style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #d32f2f; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;">
+                    <div
+                        class="process-trigger"
+                        data-process="3"
+                        style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess ===
+                        3
+                            ? 1
+                            : 0.3}; transition: opacity 0.4s;"
+                    >
+                        <h3
+                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #d32f2f; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
+                        >
                             A. A new Delimitation Act
                         </h3>
-                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin-bottom: 0; text-align: left;">
-                            <mark style="background-color: #ffe082; padding: 2px 4px; border-radius: 2px;">Delimitations around the world are prompted by either the passage of a specified time period or a periodic event. Under the Constitution of India, delimitation is prompted by a periodic event - the Population Census.</mark> Article 82 of the Constitution of India mandates the conduct of a delimitation exercise after every census.
+                        <p
+                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin-bottom: 0; text-align: left;"
+                        >
+                            <mark
+                                style="background-color: #ffe082; padding: 2px 4px; border-radius: 2px;"
+                                >Delimitations around the world are prompted by
+                                either the passage of a specified time period or
+                                a periodic event. Under the Constitution of
+                                India, delimitation is prompted by a periodic
+                                event - the Population Census.</mark
+                            > Article 82 of the Constitution of India mandates the
+                            conduct of a delimitation exercise after every census.
                         </p>
                     </div>
 
-                    <div class="process-trigger" data-process="4" style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess === 4 ? 1 : 0.3}; transition: opacity 0.4s;">
-                        <h3 style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #333; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;">4. Conduct of Delimitation</h3>
-                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;">
-                            An independent Delimitation Commission is formed. It uses the published census data to redraw the boundaries of parliamentary and assembly constituencies to ensure roughly equal populations.
+                    <div
+                        class="process-trigger"
+                        data-process="4"
+                        style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; margin-bottom: 40vh; opacity: {activeProcess ===
+                        4
+                            ? 1
+                            : 0.3}; transition: opacity 0.4s;"
+                    >
+                        <h3
+                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #333; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
+                        >
+                            4. Conduct of Delimitation
+                        </h3>
+                        <p
+                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;"
+                        >
+                            An independent Delimitation Commission is formed. It
+                            uses the published census data to redraw the
+                            boundaries of parliamentary and assembly
+                            constituencies to ensure roughly equal populations.
                         </p>
                     </div>
 
-                    <div class="process-trigger" data-process="5" style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; opacity: {activeProcess === 5 ? 1 : 0.3}; transition: opacity 0.4s;">
-                        <h3 style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #c9102f; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;">5. Publication of Delimitation Order</h3>
-                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;">
-                            The final constituency boundaries are published as a legally binding order. This order dictates the electoral map for subsequent elections until the next delimitation exercise takes place.
+                    <div
+                        class="process-trigger"
+                        data-process="5"
+                        style="background: #ffffff; border: 1px solid #e0dbce; padding: 30px 40px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); min-height: 180px; opacity: {activeProcess ===
+                        5
+                            ? 1
+                            : 0.3}; transition: opacity 0.4s;"
+                    >
+                        <h3
+                            style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #c9102f; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
+                        >
+                            5. Publication of Delimitation Order
+                        </h3>
+                        <p
+                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;"
+                        >
+                            The final constituency boundaries are published as a
+                            legally binding order. This order dictates the
+                            electoral map for subsequent elections until the
+                            next delimitation exercise takes place.
                         </p>
                     </div>
                 </div>
