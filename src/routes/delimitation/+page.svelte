@@ -484,112 +484,112 @@
         </div> <!-- End of first scrolly-text -->
 
         <div style="width: 100%; position: relative; z-index: 10;">
+        </div> <!-- End of first scrolly-text -->
+
+        <div style="width: 100%; position: relative; z-index: 10;">
         <div
             class="step"
             data-step="45"
-            style="margin: 15vh auto 30vh auto; max-width: 950px; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
+            style="margin: 15vh auto 30vh auto; max-width: 800px; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important; position: relative;"
         >
-            <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
-                <div style="flex: 1.2; min-width: 300px; text-align: left;">
+            <p
+                style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 20px; text-align: justify;"
+            >
+                <span class="handdrawn-box">Representative democracy<span class="tooltip-text">A system of government where citizens elect representatives to make laws and policies on their behalf.</span></span> is calculated in terms of the ability
+                to influence the decision of the representative (i.e., MP or
+                MLA). When an MP or MLA represents a very large population, it
+                becomes difficult for individual citizens to have their concerns
+                heard, let alone see them translated into concrete actions.
+            </p>
+
+            <div
+                style="display: flex; gap: 20px; justify-content: center; margin: 30px 0;"
+                class="compare-container"
+            >
+                <img
+                    src="/compare-1.png"
+                    class="compare-img"
+                    alt="Constituency comparison 1"
+                    style="max-width: 240px; width: 40%;"
+                />
+                <img
+                    src="/compare-2.png"
+                    class="compare-img"
+                    alt="Constituency comparison 2"
+                    style="max-width: 240px; width: 40%;"
+                />
+            </div>
+            <p
+                style="font-style: italic; text-align: center; color: #795548; font-size: 0.95rem; margin-top: -10px; margin-bottom: 30px;"
+            >
+                These two constituencies have almost the same geographic area
+                (~35-40 sq km), but Chandni Chowk has over 12 times the number
+                of voters as Daman District!
+            </p>
+
+            <p
+                style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 0; text-align: justify;"
+            >
+                The larger the constituency, the harder it is for the MP or MLA
+                to effectively engage with citizens, prioritize local issues,
+                and ensure meaningful representation. On the other hand, smaller
+                constituencies have a greater chance of communicating their
+                demands and concerns with their representative. Thus, the
+                quality of representative democracy depends on the size of the
+                constituency.
+            </p>
+
+            <div
+                class="notebook-quote stacked-paper"
+                style="margin-top: 40px; padding: 20px 25px;"
+            >
+                <h3
+                    style="color: #bf360c; margin-top: 0; font-family: 'Instrument Serif', serif; font-size: 1.8rem; display: flex; align-items: center; gap: 10px;"
+                >
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path
+                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                        ></path><line x1="12" y1="9" x2="12" y2="13"
+                        ></line><line x1="12" y1="17" x2="12.01" y2="17"
+                        ></line></svg
+                    >
+                    Note
+                </h3>
+                <p
+                    style="font-family: 'Inter', sans-serif; font-size: 1.05rem; line-height: 1.6; color: #333; margin-bottom: 0; text-align: justify;"
+                >
+                    It is imperative to bear in mind the political implications
+                    of any delimitation exercise. Delimitation decides which
+                    territorial area and its people form a particular
+                    constituency. Thus, constituency boundaries can be drawn to
+                    advantage a particular political party in the elections.
+                </p>
+            </div>
+
+            <!-- Absolute positioned Trivia box just like Did You Know -->
+            <div style="position: absolute; right: -300px; top: 10%; width: 280px; z-index: 10;">
+                <div
+                    class="notebook-quote stacked-paper"
+                    style="padding: 25px 25px; transform: rotate(1.5deg); background: #fdf9f2; box-shadow: 2px 5px 15px rgba(0,0,0,0.1);"
+                >
+                    <h3
+                        style="color: #bf360c; margin-top: 0; font-family: 'Instrument Serif', serif; font-size: 1.8rem;"
+                    >
+                        Trivia
+                    </h3>
                     <p
-                        style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 20px;"
+                        style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.5; color: #333; margin-bottom: 0;"
                     >
-                        <span class="handdrawn-box">Representative democracy<span class="tooltip-text">A system of government where citizens elect representatives to make laws and policies on their behalf.</span></span> is calculated in terms of the ability
-                        to influence the decision of the representative (i.e., MP or
-                        MLA). When an MP or MLA represents a very large population, it
-                        becomes difficult for individual citizens to have their concerns
-                        heard, let alone see them translated into concrete actions.
+                        India is the world's largest representative democracy, with over 900 million eligible voters participating in its electoral process!
                     </p>
-
-                    <div
-                        style="display: flex; gap: 20px; justify-content: center; margin: 30px 0;"
-                        class="compare-container"
-                    >
-                        <img
-                            src="/compare-1.png"
-                            class="compare-img"
-                            alt="Constituency comparison 1"
-                            style="max-width: 240px; width: 40%;"
-                        />
-                        <img
-                            src="/compare-2.png"
-                            class="compare-img"
-                            alt="Constituency comparison 2"
-                            style="max-width: 240px; width: 40%;"
-                        />
-                    </div>
-                    <p
-                        style="font-style: italic; text-align: center; color: #795548; font-size: 0.95rem; margin-top: -10px; margin-bottom: 30px;"
-                    >
-                        These two constituencies have almost the same geographic area
-                        (~35-40 sq km), but Chandni Chowk has over 12 times the number
-                        of voters as Daman District!
-                    </p>
-
-                    <p
-                        style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 0;"
-                    >
-                        The larger the constituency, the harder it is for the MP or MLA
-                        to effectively engage with citizens, prioritize local issues,
-                        and ensure meaningful representation. On the other hand, smaller
-                        constituencies have a greater chance of communicating their
-                        demands and concerns with their representative. Thus, the
-                        quality of representative democracy depends on the size of the
-                        constituency.
-                    </p>
-
-                    <div
-                        class="notebook-quote stacked-paper"
-                        style="margin-top: 40px; padding: 20px 25px;"
-                    >
-                        <h3
-                            style="color: #bf360c; margin-top: 0; font-family: 'Instrument Serif', serif; font-size: 1.8rem; display: flex; align-items: center; gap: 10px;"
-                        >
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                ><path
-                                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
-                                ></path><line x1="12" y1="9" x2="12" y2="13"
-                                ></line><line x1="12" y1="17" x2="12.01" y2="17"
-                                ></line></svg
-                            >
-                            Note
-                        </h3>
-                        <p
-                            style="font-family: 'Inter', sans-serif; font-size: 1.05rem; line-height: 1.6; color: #333; margin-bottom: 0;"
-                        >
-                            It is imperative to bear in mind the political implications
-                            of any delimitation exercise. Delimitation decides which
-                            territorial area and its people form a particular
-                            constituency. Thus, constituency boundaries can be drawn to
-                            advantage a particular political party in the elections.
-                        </p>
-                    </div>
-                </div>
-
-                <div style="flex: 0.8; margin-top: 20px;">
-                    <div
-                        class="notebook-quote stacked-paper"
-                        style="padding: 25px 30px; transform: rotate(1.5deg); background: #fdf9f2;"
-                    >
-                        <h3
-                            style="color: #bf360c; margin-top: 0; font-family: 'Instrument Serif', serif; font-size: 1.8rem;"
-                        >
-                            Trivia
-                        </h3>
-                        <p
-                            style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.6; color: #333; margin-bottom: 0;"
-                        >
-                            India is the world's largest representative democracy, with over 900 million eligible voters participating in its electoral process!
-                        </p>
-                    </div>
                 </div>
             </div>
 
@@ -691,7 +691,7 @@
         <div
             class="step"
             data-step="46"
-            style="margin: 15vh auto; max-width: 950px; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
+            style="margin: 15vh auto; max-width: 800px; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
         >
             <h2
                 style="font-family: 'Instrument Serif', serif; font-size: 2.5rem; color: #b71c1c; margin-bottom: 30px; text-align: left;"
