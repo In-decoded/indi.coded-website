@@ -81,7 +81,7 @@
 <div class="hero-container">
     <nav class="top-nav">
         <div class="nav-left">
-            <span>indi.coded</span>
+            <span>in.decoded</span>
         </div>
         <div class="nav-right">
             <a href="/about">About</a>
