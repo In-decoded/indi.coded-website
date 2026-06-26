@@ -484,10 +484,10 @@
         <div
             class="step"
             data-step="45"
-            style="margin-top: -20vh; margin-bottom: 15vh; text-align: justify; width: 220%; margin-left: 15%; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
+            style="margin: 15vh 0 30vh 0; text-align: justify; width: 220%; margin-left: 15%; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important;"
         >
-            <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
-                <div style="flex: 1.1; min-width: 300px;">
+            <div style="position: relative; width: 100%;">
+                <div style="width: 45%;">
                     <p
                         style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 20px;"
                     >
@@ -571,7 +571,7 @@
                     </div>
                 </div>
 
-                <div style="flex: 0.9; margin-top: 60px;">
+                <div style="position: absolute; right: 10%; top: 50px; width: 350px;">
                     <div
                         class="notebook-quote stacked-paper"
                         style="padding: 25px 30px; transform: rotate(1.5deg); background: #fdf9f2;"
