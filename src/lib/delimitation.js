@@ -34,6 +34,7 @@ export async function initDelimitation() {
     };
 
     var colorScales = {
+        "Population": d3.scale.linear().domain([0, 220]).range(["#fef9c3", "#a16207"]),
         "FertilityRate": d3.scale.linear().domain([1.0, 3.0]).range(["#fee2e2", "#7f1d1d"]),
         "GDPPerCapita": d3.scale.linear().domain([40, 450]).range(["#ecfdf5", "#064e3b"]),
         "TaxContribution": d3.scale.linear().domain([0, 15]).range(["#f3e8ff", "#3b0764"]),
@@ -41,6 +42,7 @@ export async function initDelimitation() {
     };
 
     var propMapping = {
+        "Population": "POPULATION",
         "FertilityRate": "FERTILITY",
         "GDPPerCapita": "GDPCAPITA",
         "TaxContribution": "TAX_CONT",

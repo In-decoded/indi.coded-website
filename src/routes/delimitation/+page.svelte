@@ -47,6 +47,30 @@
     }
 
     let activeProcess = $state(3);
+
+    let hoveredRegion = $state(null);
+    const regions = [
+        { id: "northern", label: "Northern states", color: "#bf360c" }, // Deep orange/red
+        { id: "other", label: "Other states", color: "#ffb74d" }, // Light orange
+        { id: "southern", label: "Southern states", color: "#795548" } // Brown
+    ];
+    const vizRows = [
+        { label: "Seat share in Parliament", data: { northern: 43, other: 33, southern: 24 } },
+        { label: "Population share (1971)", data: { northern: 43, other: 32, southern: 25 } },
+        { label: "Population share (2026)", data: { northern: 50, other: 30, southern: 20 } }
+    ];
+
+    function getSegment(rowIdx, regionId) {
+        const row = vizRows[rowIdx].data;
+        let start = 0;
+        if (regionId === "other") start = row.northern;
+        if (regionId === "southern") start = row.northern + row.other;
+        return {
+            x: 320 + (start / 100) * 440,
+            w: (row[regionId] / 100) * 440,
+            val: row[regionId]
+        };
+    }
 </script>
 
 <section id="intro">
@@ -498,6 +522,8 @@
                 to 31 (-8) and Kerala from 20 to 12 (-8). The balance of power
                 shifts dramatically.
             </p>
+            
+
             <p
                 style="font-style: italic; font-size: 0.9em; color: #795548; margin-top: 20px; border-top: 1px solid #e0dbce; padding-top: 10px;"
             >
@@ -520,6 +546,8 @@
             data-step="45"
             style="margin: 15vh auto 30vh auto; max-width: 800px; box-sizing: border-box; z-index: 100; background: transparent; border: none; box-shadow: none; padding: 0; transform: none !important; opacity: 1 !important; position: relative;"
         >
+
+            
             <p
                 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333; margin-bottom: 20px; text-align: justify;"
             >
@@ -944,7 +972,7 @@
                             ? 'scale(1.1)'
                             : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 225px 15px 255px 15px/15px 255px 15px 225px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);"
                     >
-                        A NEW<br />DELIMITATION<br />ACT
+                        DRAFTING OF<br />WORKING<br />PAPERS
                     </div>
                     <div
                         style="position: absolute; left: 68%; top: 25%; transform: translate(-50%, -50%) {activeProcess ===
@@ -952,7 +980,7 @@
                             ? 'scale(1.1)'
                             : 'scale(1)'}; border: 2px solid #d32f2f; border-radius: 255px 25px 225px 15px/15px 225px 15px 255px; padding: 4px 8px; color: #d32f2f; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: bold; text-align: center; pointer-events: none; transition: transform 0.3s; background: rgba(255, 255, 255, 0.9);"
                     >
-                        CONDUCT OF<br />DELIMITATION
+                        RELEASE OF<br />DRAFT PROPOSAL
                     </div>
                     <div
                         style="position: absolute; left: 82%; top: -2%; transform: translate(-50%, -50%) {activeProcess ===
@@ -1103,6 +1131,64 @@
                             bedrock upon which new constituency boundaries will
                             be calculated.
                         </p>
+                        <p
+                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 20px 0 0 0; text-align: left;"
+                        >
+                            The Constitution empowers the Parliament to decide the manner in which the delimitation exercise is to be carried out as well as the authority that should carry out the exercise. In India, the Delimitation Act entrusts the task of drawing the Parliamentary and Assembly constituencies to an independent authority. This authority is known as the Delimitation Commission (DC). After the enactment of the Delimitation Act, a new DC is constituted. The DC is constituted by the Union Government. The last DC was appointed in 2002 with the following core members: Present or a former Supreme Court judge as the Chairperson, The Chief Election Commissioner (or his/her nominee) and the State Election Commissioner (or his/her nominee), as members.
+                        </p>
+                        <table
+                            style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 1rem; color: #333; text-align: left; background: #fff; margin-top: 20px;"
+                        >
+                            <thead>
+                                <tr>
+                                    <th
+                                        style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;"
+                                        >STAGE / EVENT</th
+                                    >
+                                    <th
+                                        style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;"
+                                        >STAKEHOLDERS INVOLVED</th
+                                    >
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >Delimitation Commission is constituted</td
+                                    >
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >Central Government</td
+                                    >
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >Delimitation Commission commences its work</td
+                                    >
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >Central government, Election Commission of India (ECI), SECs, Governor, and Nagaland, Speakers of Lok Sabha</td
+                                    >
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >Nomination of Associate Members (AMs)</td
+                                    >
+                                    <td
+                                        style="padding: 12px; border: 2px solid #333;"
+                                        >MPs, MLAs, Speakers of LS and State Legislative Assemblies, political parties, and CEC</td
+                                    >
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p
+                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 20px 0 0 0; text-align: left;"
+                        >
+                            In addition to its core membership, Delimitation Acts have allowed the DC to associate itself with certain MPs from each State and MLAs from each State. For instance, the 2002 Delimitation Act required the Speaker of the Lok Sabha to nominate 5 MPs from every State within two months and the nomination of 5 MLAs by the Speaker of the respective State Assembly within one month of the composition of the DC. The nomination has to be communicated to the CEC as well.
+                        </p>
                     </div>
 
                     <div
@@ -1116,21 +1202,73 @@
                         <h3
                             style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #3e2723; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
                         >
-                            A. A new Delimitation Act
+                            3. Drafting of Working Papers
                         </h3>
-                        <p
-                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin-bottom: 0; text-align: left;"
-                        >
-                            <mark
-                                style="background-color: #ffe082; padding: 2px 4px; border-radius: 2px;"
-                                >Delimitations around the world are prompted by
-                                either the passage of a specified time period or
-                                a periodic event. Under the Constitution of
-                                India, delimitation is prompted by a periodic
-                                event - the Population Census.</mark
-                            > Article 82 of the Constitution of India mandates the
-                            conduct of a delimitation exercise after every census.
+                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;">
+                            The next stage involves the preparation of Working Papers by the DC. The DC initially prepares working papers on the following:
                         </p>
+                        <ul style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 10px 0 20px 0; padding-left: 20px; text-align: left;">
+                            <li><strong>Paper I:</strong> District-wise population data and entitlement of assembly seats for each district</li>
+                            <li><strong>Paper II:</strong> Entitlement of seats for Scheduled Castes (SC) in the assembly and distribution of SC seats among the districts</li>
+                        </ul>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 20px 0 0 0; text-align: left;">
+                            Soon after Papers I and II are prepared by the DC’s office, the same is submitted to the Chairperson of the Delimitation Commission, Election Commission of India (ECI) and the State Election Commission (SEC) of that State. Thereafter, a meeting of the full Commission follows to tentatively approve these Papers I and II. The AMs are first consulted at this stage. There has been little to no guidance in Delimitation Acts on considerations that direct the nomination of AMs by respective Speakers. The absence of any guidance could lead to concentration of AMs from any one political party, costing the DC adequate representation from across parties. Moreover, the AMs do not have the right to vote or sign any decision of the Commission.
+                        </p>
+                        <ul style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 20px 0 20px 0; padding-left: 20px; text-align: left;">
+                            <li><strong>Paper III:</strong> SC population in the proposed assembly constituencies and seats proposed to be reserved for SC</li>
+                            <li><strong>Paper IV:</strong> Scheduled Tribes (ST) population in the proposed assembly constituencies and seats proposed to be reserved for ST</li>
+                            <li><strong>Paper V:</strong> Abstract statement of proposed assembly constituencies and total, SC and ST population in each constituency</li>
+                            <li><strong>Paper VI:</strong> District-wise statement showing details of extent, total/SC/ST population in each of the proposed assembly constituencies</li>
+                            <li><strong>Paper VII:</strong> Proposed Lok Sabha constituencies and their extent in terms of proposed assembly constituencies</li>
+                        </ul>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 20px 0 0 0; text-align: left;">
+                            The working papers are again submitted to the DC for tentative approval after taking into consideration the suggestions of the AMs. At this stage, all tentatively approved working papers are disseminated to the AMs, accompanied by supplementary data and maps. AMs are allotted adequate time to review the proposals and formulate their suggestions. Subsequently, the DC convenes for the second set of meetings with the AMs. The DC evaluates the suggestions of the AMs on the Working Papers, after which the draft proposals of the Commission are formulated.
+                        </p>
+                        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 1rem; color: #333; text-align: left; background: #fff; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;">STAGE</th>
+                                    <th style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;">STAKEHOLDERS INVOLVED</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">Delimitation Commission prepares working papers.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">Members of the Delimitation Commission + members of the DC’s office</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">Papers I and II tentatively approved by DC. AMs will be consulted for the first time.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">Members of the DC + DC’s office + AMs</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">Papers III to VII tentatively approved by the DC. AMs are consulted.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">Members of the DC + DC’s office + AMs</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">Copies of all Working Papers disseminated to the AMs accompanied by supplementary data and maps.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">Members of the DC + DC’s office + AMs + The Chief Election Officer of the concerned State</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">AMs are given a reasonable time to study the proposals and formulate their suggestions.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">AMs</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">The second round of meeting(s) of the Commission with the AMs.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">Members of the DC + DC’s office + AMs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div
+                            style="background-color: #d32f2f; color: #fff; padding: 20px; border-radius: 8px; margin-top: 30px; font-family: 'Inter', sans-serif;"
+                        >
+                            <h4 style="margin-top: 0; font-size: 1.25rem; margin-bottom: 15px;">Who all constitute the office of the DC?</h4>
+                            <ul style="margin: 0; padding-left: 20px; line-height: 1.6; font-size: 1.05rem;">
+                                <li>Deputy Election Commissioner (head);</li>
+                                <li>One of the ECI Secretaries (who is notified as ex-officio Secretary of the DC);</li>
+                                <li>Any expert in geographical information system; and</li>
+                                <li>Four Under Secretaries and around 20 supporting staff are drawn from the ECI.</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <div
@@ -1144,16 +1282,43 @@
                         <h3
                             style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #3e2723; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
                         >
-                            4. Conduct of Delimitation
+                            4. Release of Draft Proposal
                         </h3>
-                        <p
-                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;"
-                        >
-                            An independent Delimitation Commission is formed. It
-                            uses the published census data to redraw the
-                            boundaries of parliamentary and assembly
-                            constituencies to ensure roughly equal populations.
+                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;">
+                            At this stage, the Delimitation draft proposal is developed by the Delimitation Commission, incorporating the recommendations of the AMs. A copy of the draft proposal is subsequently sent to each AM. The AMs may submit their objections to any section of the draft proposal at this time as a dissent note.
                         </p>
+                        <h4 style="font-family: 'Instrument Serif', serif; font-size: 1.5rem; color: #3e2723; margin-top: 30px; margin-bottom: 10px; text-align: left;">
+                            Concluding Steps
+                        </h4>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;">
+                            Subsequently, the DC publishes the draft delimitation plan in the Gazette of India and in the Official Gazettes of all relevant States. The dissenting remarks of the AMs are published solely at the request of the AM.
+                        </p>
+                        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 1rem; color: #333; text-align: left; background: #fff; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;">STAGE</th>
+                                    <th style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;">STAKEHOLDERS INVOLVED</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">A Delimitation draft Proposal is prepared by the DC.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">Members of the DC + DC’s office + AMs + ECI</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">A copy of the draft proposals is sent to each of the AMs.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">Members of the DC + DC’s office + AMs</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">The AMs may send back dissenting notes in respect of any of the draft proposals.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">DC + AMs</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">DC will publish the draft proposal together with the dissent note in the Gazette of India and in the Official Gazettes of all relevant States.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">DC</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div
@@ -1167,16 +1332,72 @@
                         <h3
                             style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #3e2723; font-style: italic; margin-top: 0; margin-bottom: 15px; text-align: left;"
                         >
-                            5. Publication of Delimitation Order
+                            5. Concluding Steps & Publication
                         </h3>
-                        <p
-                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;"
-                        >
-                            The final constituency boundaries are published as a
-                            legally binding order. This order dictates the
-                            electoral map for subsequent elections until the
-                            next delimitation exercise takes place.
+                        <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin: 0; text-align: left;">
+                            The delimitation plan is opened up to the public and their opinions and views are solicited through one or more public sittings. The final delimitation plan/order is published in the official gazette and in at least two vernacular newspapers. This is also publicised on radio, television and other possible media available to the public. The Delimitation Commission becomes inoperative after the final Delimitation Order is published.
                         </p>
+                        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 1rem; color: #333; text-align: left; background: #fff; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;">STAGE</th>
+                                    <th style="background-color: #d32f2f; color: #fff; padding: 12px; border: 2px solid #333; font-weight: bold; text-align: center;">STAKEHOLDERS INVOLVED</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">Public opinion and views are solicited on the Delimitation Plan</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">Citizens, DC</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">All objections and suggestions which may have been received are considered by the DC before the date so specified.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">DC, State Governments, participants in public consultations</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">Thereafter by one or more orders (i) the delimitation of parliamentary constituencies; and (ii) the delimitation of assembly constituencies, is determined for each state.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">DC</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 2px solid #333;">After such publication, every such order shall be laid before the House of the People and the Legislative Assemblies of the State concerned.</td>
+                                    <td style="padding: 12px; border: 2px solid #333;">MPs and MLAs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="notebook-quote"
+                style="max-width: 100%; padding: 40px; margin: 40px 0 10vh 0; background: #fffdf8;"
+            >
+                <h3
+                    style="font-family: 'Inter', sans-serif; font-size: 1.5rem; color: #d32f2f; margin-top: 0; margin-bottom: 15px; text-align: left; font-weight: bold;"
+                >
+                    V. Key Takeaways
+                </h3>
+                <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; margin-bottom: 20px; text-align: left;">
+                    The delimitation process mapping exercise highlighted some concerns around the current process being followed:
+                </p>
+                
+                <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+                    <div style="background-color: #d32f2f; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; justify-content: center; align-items: center; font-weight: bold; margin-right: 15px; flex-shrink: 0; margin-top: 3px;">1</div>
+                    <div style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; text-align: left;">
+                        As you can notice, delimitation is an extremely lengthy process which can become time-consuming. For instance, the 2008 delimitation took 6 years and 4 months to come out with the final delimitation order. Since the clock is already ticking, it is imperative that we start with the process at the earliest.
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+                    <div style="background-color: #d32f2f; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; justify-content: center; align-items: center; font-weight: bold; margin-right: 15px; flex-shrink: 0; margin-top: 3px;">2</div>
+                    <div style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; text-align: left;">
+                        The Delimitation process is a completely executive-driven process with the power of delimiting constituencies being with governmental institutions such as the Parliament, the ECI, the DC and the Speakers.
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start;">
+                    <div style="background-color: #d32f2f; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; justify-content: center; align-items: center; font-weight: bold; margin-right: 15px; flex-shrink: 0; margin-top: 3px;">3</div>
+                    <div style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #333; text-align: left;">
+                        The lack of transparency within the delimitation process is of concern as it undermines both citizen participation and expert engagement. Since this complex process needs to be understood carefully and researched closely, institutional spaces for collaboration need to be provided.
                     </div>
                 </div>
             </div>
@@ -1184,93 +1405,221 @@
     </div>
     <!-- End of full-width centered container -->
 
+
     <div class="scrolly-text" style="margin-top: 0; z-index: 10;">
-        <div class="step" data-step="5">
+        <div class="step" data-step="5" data-color="Population">
             <h2>The Representation Gap</h2>
+            
+            <p style="font-family: 'Instrument Serif', serif; font-size: 1.8rem; color: #b71c1c; font-style: italic; border-left: 4px solid #b71c1c; padding: 15px 20px; margin: 20px 0; background: #fffdf8;">
+                &ldquo;One person, one vote, one value.&rdquo;<br>
+                <span style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #555; font-style: normal; display: block; margin-top: 10px;">— Union Home Minister Amit Shah, defending the need for delimitation.</span>
+            </p>
+
             <p>
-                This also impacts the quality of representative democracy.
-                Currently, one MP from Tamil Nadu represents a constituency of
-                approximately 18 lakh people, whereas an MP from Uttar Pradesh
-                represents around 25 lakh. The larger the constituency, the
-                harder it becomes for a representative to effectively prioritize
-                local issues and engage with citizens.
+                The freeze on Lok Sabha seats since the 1971 Census has produced striking disparities in representation. While constituency boundaries have continued to be redrawn, the allocation of seats among states has remained unchanged. As populations diverged, so did the number of citizens represented by each MP.
             </p>
-            <p
-                style="font-style: italic; font-size: 0.9em; color: #795548; margin-top: 20px; border-top: 1px solid #e0dbce; padding-top: 10px;"
-            >
-                Map: Population Distribution (2011 Census)
+            <p>
+                Today, an MP from Tamil Nadu represents roughly 18 lakh people, while an MP from Uttar Pradesh represents around 25 lakh. In practice, this means legislators from larger constituencies face greater demands on constituency services, public outreach, and local issue resolution.
             </p>
+            <p>
+                The question facing the Delimitation Commission is whether electoral equality should now outweigh the political compromises made to encourage population control five decades ago.
+            </p>
+            
+            <div style="margin: 30px 0; background: transparent;">
+                <svg viewBox="0 0 800 560" style="width: 100%; height: auto; font-family: 'Inter', sans-serif;">
+                    <!-- Headers -->
+                    {#each regions as region}
+                        {@const seg0 = getSegment(0, region.id)}
+                        {@const words = region.label.split(' ')}
+                        <text x={seg0.x + seg0.w/2} y="30" style="font-size: 24px; font-weight: bold;" fill="#333" text-anchor="middle">
+                            <tspan x={seg0.x + seg0.w/2} dy="0">{words[0]}</tspan>
+                            {#if words.length > 1}
+                                <tspan x={seg0.x + seg0.w/2} dy="26">{words.slice(1).join(' ')}</tspan>
+                            {/if}
+                        </text>
+                    {/each}
+
+                    {#each vizRows as row, i}
+                        {@const y = 100 + i * 160}
+                        
+                        <!-- Row Label -->
+                        <text x="300" y={y + 50} style="font-size: 22px;" fill="#555" text-anchor="end">{row.label}</text>
+
+                        <!-- Bars -->
+                        {#each regions as region}
+                            {@const seg = getSegment(i, region.id)}
+                            <!-- svelte-ignore a11y_no_static_element_interactions -->
+                            <!-- svelte-ignore a11y_mouse_events_have_key_events -->
+                            <rect 
+                                x={seg.x} 
+                                y={y} 
+                                width={seg.w} 
+                                height="80" 
+                                fill={region.color} 
+                                opacity={hoveredRegion && hoveredRegion !== region.id ? 0.3 : 1}
+                                style="transition: opacity 0.3s; cursor: pointer;"
+                                onmouseenter={() => hoveredRegion = region.id}
+                                onmouseleave={() => hoveredRegion = null}
+                            />
+                            <!-- Value Text -->
+                            <text 
+                                x={seg.x + seg.w/2} 
+                                y={y + 52} 
+                                style="font-size: 28px; font-weight: bold; transition: opacity 0.3s; pointer-events: none;"
+                                fill={region.id === 'other' ? '#555' : '#fff'} 
+                                text-anchor="middle"
+                                opacity={hoveredRegion && hoveredRegion !== region.id ? 0.3 : 1}
+                            >{seg.val}%</text>
+                        {/each}
+
+                        <!-- Polygons linking to next row -->
+                        {#if i < vizRows.length - 1}
+                            {#each regions as region}
+                                {@const topSeg = getSegment(i, region.id)}
+                                {@const botSeg = getSegment(i + 1, region.id)}
+                                <!-- svelte-ignore a11y_no_static_element_interactions -->
+                                <!-- svelte-ignore a11y_mouse_events_have_key_events -->
+                                <polygon 
+                                    points="{topSeg.x},{y + 80} {topSeg.x + topSeg.w},{y + 80} {botSeg.x + botSeg.w},{y + 160} {botSeg.x},{y + 160}"
+                                    fill={region.color}
+                                    opacity={hoveredRegion === region.id ? 0.6 : (hoveredRegion ? 0.1 : 0.25)}
+                                    style="transition: opacity 0.3s; cursor: pointer;"
+                                    onmouseenter={() => hoveredRegion = region.id}
+                                    onmouseleave={() => hoveredRegion = null}
+                                />
+                            {/each}
+                        {/if}
+                    {/each}
+                </svg>
+                <p style="text-align: center; font-size: 1.25rem; color: #666; margin-top: 15px; font-style: italic;">Hover over the regions to trace their demographic shifts.</p>
+            </div>
+            <div style="margin-top: 20px; border-top: 1px solid #e0dbce; padding-top: 10px; color: #795548;">
+                <p style="font-style: italic; font-size: 0.9em; margin: 0;">Map: Population Distribution (2011 Census)</p>
+                <p style="font-size: 0.8em; font-weight: normal; margin: 5px 0 0 0; line-height: 1.4;">
+                    <sup>1</sup> <a href="https://timesofindia.indiatimes.com/india/delimitation-needed-to-preserve-one-vote-one-value-amit-shah-in-lok-sabha/articleshow/130345375.cms" target="_blank" style="color: inherit; text-decoration: none; word-break: break-all; font-weight: normal;">https://timesofindia.indiatimes.com/india/delimitation-needed-to-preserve-one-vote-one-value-amit-shah-in-lok-sabha/articleshow/130345375.cms</a>
+                </p>
+            </div>
         </div>
 
         <div class="step" data-step="6" data-color="FertilityRate">
             <h2>The Role of Fertility</h2>
+            
+            <p style="font-family: 'Instrument Serif', serif; font-size: 1.8rem; color: #b71c1c; font-style: italic; border-left: 4px solid #b71c1c; padding: 15px 20px; margin: 20px 0; background: #fffdf8;">
+                &ldquo;States that controlled their population should not be penalised.&rdquo;<br>
+                <span style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #555; font-style: normal; display: block; margin-top: 10px;">— M.K. Stalin, Chief Minister of Tamil Nadu.</span>
+            </p>
+
             <p>
-                Why the shift? The Total Fertility Rate (TFR) in Bihar remains
-                high at 2.98, while Kerala is at 1.7. Southern states dropped
-                below the replacement rate of 2.1 decades ago. They successfully
-                implemented the very population control policies the Union
-                government demanded in 1971.
+                The roots of today's debate lie in India's demographic transition. Southern states achieved replacement-level fertility decades ago through investments in public health, female education, and family planning. Northern states experienced a slower demographic transition and continue to record higher fertility rates.
             </p>
-            <p
-                style="font-style: italic; font-size: 0.9em; color: #795548; margin-top: 20px; border-top: 1px solid #e0dbce; padding-top: 10px;"
-            >
-                Map: Total Fertility Rate (TFR)
+            <p>
+                According to NFHS-5, Bihar's Total Fertility Rate is 2.98, the highest in India, while Kerala (1.7) and Tamil Nadu (1.8) remain well below the replacement level of 2.1.
             </p>
+            <p>
+                If parliamentary representation is redistributed purely on current population, states that met national family planning goals earliest fear losing relative political influence because their populations grew more slowly.
+            </p>
+            <div style="margin-top: 20px; border-top: 1px solid #e0dbce; padding-top: 10px; color: #795548;">
+                <p style="font-style: italic; font-size: 0.9em; margin: 0;">Map: Total Fertility Rate (TFR)</p>
+                <p style="font-size: 0.8em; font-weight: normal; margin: 5px 0 0 0; line-height: 1.4;">
+                    <sup>2</sup> <a href="https://www.reuters.com/world/india/north-vs-south-india-what-is-delimitation-why-its-controversial-2025-03-14/" target="_blank" style="color: inherit; text-decoration: none; word-break: break-all; font-weight: normal;">https://www.reuters.com/world/india/north-vs-south-india-what-is-delimitation-why-its-controversial-2025-03-14/</a>
+                </p>
+            </div>
         </div>
 
         <div class="step" data-step="7" data-color="GDPPerCapita">
             <h2>Economic Disconnect</h2>
             <p>
-                This creates a tension: states losing political power are the
-                economic engines. The five southern states represent just 20% of
-                the population but contribute over 30% to India's GDP. Per
-                capita income in Tamil Nadu (₹2.7 lakh) is nearly six times
-                higher than in Bihar (₹46,000).
+                The delimitation debate is no longer only about population—it is increasingly about economics.
             </p>
-            <p
-                style="font-style: italic; font-size: 0.9em; color: #795548; margin-top: 20px; border-top: 1px solid #e0dbce; padding-top: 10px;"
-            >
+            <p>
+                The five southern states together account for around one-third of India's Gross State Domestic Product despite comprising roughly one-fifth of the national population. Tamil Nadu alone ranks among India's largest manufacturing economies, while Karnataka dominates technology exports and Telangana has emerged as a pharmaceutical hub.
+            </p>
+            <p>
+                This has prompted several economists to ask whether economic contribution and political representation are beginning to move in opposite directions.
+            </p>
+            <p>
+                As The Hindu observed, the issue is not merely about parliamentary seats but about preserving the balance between India's demographic and economic realities.
+            </p>
+            <p style="font-style: italic; font-size: 0.9em; color: #795548; margin-top: 20px; border-top: 1px solid #e0dbce; padding-top: 10px;">
                 Map: GDP Per Capita (INR)
             </p>
         </div>
 
         <div class="step" data-step="8" data-color="TaxContribution">
             <h2>Tax Contribution</h2>
+            
+            <p style="font-family: 'Instrument Serif', serif; font-size: 1.8rem; color: #b71c1c; font-style: italic; border-left: 4px solid #b71c1c; padding: 15px 20px; margin: 20px 0; background: #fffdf8;">
+                &ldquo;We contribute more, but our voice may become smaller.&rdquo;<br>
+                <span style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #555; font-style: normal; display: block; margin-top: 10px;">— A recurring concern raised by several southern Chief Ministers.</span>
+            </p>
+
             <p>
-                For every ₹100 contributed to central taxes, states like
-                Karnataka receive just ₹15 back, while Uttar Pradesh receives
-                ₹273 and Bihar ₹922. The fiscal redistribution system relies
-                heavily on the surplus generated by the very states slated to
-                lose parliamentary representation.
+                Fiscal federalism has become closely linked to the delimitation debate.
             </p>
-            <p
-                style="font-style: italic; font-size: 0.9em; color: #795548; margin-top: 20px; border-top: 1px solid #e0dbce; padding-top: 10px;"
-            >
-                Map: Central Tax Contribution vs Return
+            <p>
+                According to Finance Commission data, wealthier states contribute a disproportionately larger share of direct and indirect taxes to the Union. These revenues are then redistributed using formulas that prioritize income gaps, population, and development needs.
             </p>
+            <p>
+                Studies frequently cited in public debate estimate that for every ₹100 contributed, Karnataka receives roughly ₹15, while states such as Uttar Pradesh and Bihar receive several times their own contribution through transfers. Although redistribution remains a constitutional objective, southern states argue that a simultaneous reduction in their parliamentary influence would weaken their ability to shape future fiscal policy.
+            </p>
+            <div style="margin-top: 20px; border-top: 1px solid #e0dbce; padding-top: 10px; color: #795548;">
+                <p style="font-style: italic; font-size: 0.9em; margin: 0;">Map: Central Tax Contribution vs Return</p>
+                <p style="font-size: 0.8em; font-weight: normal; margin: 5px 0 0 0; line-height: 1.4;">
+                    <sup>3</sup> <a href="https://www.reuters.com/world/india/indias-north-south-divide-over-modis-plan-redraw-constituencies-2025-03-04/" target="_blank" style="color: inherit; text-decoration: none; word-break: break-all; font-weight: normal;">https://www.reuters.com/world/india/indias-north-south-divide-over-modis-plan-redraw-constituencies-2025-03-04/</a>
+                </p>
+            </div>
         </div>
 
         <div class="step" data-step="9" data-color="Literacy">
             <h2>Development Outcomes</h2>
             <p>
-                Kerala's literacy rate sits at 96%, compared to Bihar's 61%.
-                Infant mortality in Tamil Nadu is 13 per 1000, while UP is 38.
-                The paradox of the 2026 delimitation is that it effectively
-                punishes human development success with political
-                marginalization.
+                India's demographic divide is also reflected in human development indicators.
             </p>
-            <p
-                style="font-style: italic; font-size: 0.9em; color: #795548; margin-top: 20px; border-top: 1px solid #e0dbce; padding-top: 10px;"
-            >
+            <p>
+                Kerala's literacy rate exceeds 94%, compared with around 61% in Bihar. Infant mortality in Tamil Nadu is among the lowest in the country, while several northern states continue to record substantially higher rates despite recent improvements.
+            </p>
+            <p>
+                For many southern leaders, this creates a paradox: states that invested heavily in education, healthcare, and population stabilisation now fear being disadvantaged in parliamentary representation because those policies succeeded.
+            </p>
+            <p>
+                As delimitation approaches, the debate has shifted beyond constitutional arithmetic to a broader question:
+            </p>
+            <p style="font-weight: bold; color: #333; margin-top: 15px; font-size: 1.2rem;">
+                Should developmental success reduce a state's political influence?
+            </p>
+            <p style="font-style: italic; font-size: 0.9em; color: #795548; margin-top: 20px; border-top: 1px solid #e0dbce; padding-top: 10px;">
                 Map: Literacy Rate (%)
             </p>
         </div>
     </div>
 </section>
 
-<section id="outro">
-    <p>Data is approximate and used for illustrative purposes.</p>
-    <a href="/">Back to Indecoded</a>
+<section id="outro" style="max-width: 900px; margin: 60px auto 80px auto; padding: 40px 20px; text-align: left;">
+    <div style="margin-bottom: 40px;">
+        <h3 style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #3e2723; margin-top: 0; margin-bottom: 20px; text-align: left;">Methodology</h3>
+        <p style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+            Data and source documents were acquired from public records including the NFHS-5, the Registrar General of India, Finance Commission reports, and the 2011 Census. The website is built with SvelteKit. For the interactive map views, we utilize D3.js alongside Scrollama to drive scroll-based animations. The geographical data relies on a custom script using an Indian states GeoJSON to dynamically project, align, and render state boundaries and their associated metrics, smoothly interpolating colors and positions as the user progresses through the narrative.
+        </p>
+
+        <h3 style="font-family: 'Instrument Serif', serif; font-size: 2rem; color: #3e2723; margin-top: 40px; margin-bottom: 20px; text-align: left;">AI Declaration</h3>
+        <p style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6; color: #444; margin-bottom: 15px;">
+            No core narrative text in this story was 'generated' or written by AI. The authors wrote and rewrote the content, using AI solely for structural formatting, grammar, and spellchecks. The visual components were designed and arranged using classical techniques of conceptualizing and illustrating the data to tell a compelling story.
+        </p>
+        <p style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6; color: #444; margin-bottom: 10px;">
+            The author did use AI for coding assistance, meaning internal logic, scroll-based triggers, map alignment algorithms, and Svelte component scripting may have been partially or substantially LLM-generated.
+        </p>
+    </div>
+    
+    <div style="border-top: 1px solid #e0dbce; padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+        <p style="color: #795548; font-size: 0.95rem; font-style: italic; margin: 0;">* Data is approximate and used for illustrative purposes.</p>
+        <a href="/" style="padding: 12px 24px; background: #795548; color: #fffdf8; text-decoration: none; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 500; transition: opacity 0.3s;">Back to Indecoded</a>
+    </div>
 </section>
 
 <svelte:window on:contextmenu|preventDefault />
+
+<style>
+    :global(body) {
+        background-color: #F2E1AF !important;
+    }
+</style>
