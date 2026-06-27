@@ -8,7 +8,7 @@ export async function initDelimitation() {
     var dimratio = Math.min(width / 800, height / 600);
     if (dimratio > 1) dimratio = 1;
 
-    var mapCenterX = width > 768 ? width * 0.65 : width / 2;
+    var mapCenterX = width / 2;
 
     var svg = d3.select("#map-svg");
     var tooltip = d3.select(".tooltip");
