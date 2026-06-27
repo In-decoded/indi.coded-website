@@ -8,7 +8,8 @@
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        activeProcess = parseInt(entry.target.dataset.process);
+                        const target = /** @type {HTMLElement} */ (entry.target);
+                        activeProcess = parseInt(target.dataset.process || "0");
                     }
                 });
             },
@@ -48,6 +49,7 @@
 
     let activeProcess = $state(3);
 
+    /** @type {string | null} */
     let hoveredRegion = $state(null);
     const regions = [
         { id: "northern", label: "Northern states", color: "#bf360c" }, // Deep orange/red
@@ -60,6 +62,10 @@
         { label: "Population share (2026)", data: { northern: 50, other: 30, southern: 20 } }
     ];
 
+    /**
+     * @param {number} rowIdx
+     * @param {"northern" | "other" | "southern"} regionId
+     */
     function getSegment(rowIdx, regionId) {
         const row = vizRows[rowIdx].data;
         let start = 0;
