@@ -314,20 +314,33 @@ export async function initDelimitation() {
         }
     }
 
-    function showTooltipPath(d) {
-        var data = d.properties;
-        var name = data.STNAME_SH || data.STNAME;
+    function showTooltipPath(d, i) {
+        var targetGeo = mapDatasets[currentColorMetric] || mapDatasets["Base"];
+        var data = targetGeo.features[i] ? targetGeo.features[i].properties : d.properties;
+        var name = data.STNAME_SH || data.STNAME || d.properties.STNAME_SH || d.properties.STNAME;
         if (!name) return;
         var html = "<strong>" + name + "</strong><br/>";
-        if (data.CURR_SEATS) html += "Current Seats: " + data.CURR_SEATS + "<br/>";
-        if (data.PR_SEATS) html += "Projected Seats: " + data.PR_SEATS + "<br/>";
-        if (data.POPULATION) html += "Population: " + data.POPULATION + "m<br/>";
-        if (data.FERTILITY) html += "Fertility: " + data.FERTILITY + "<br/>";
-        if (data.GDPCAPITA) html += "GDP/Capita: INR " + data.GDPCAPITA + "k<br/>";
-        if (data.LITERACY) html += "Literacy: " + data.LITERACY + "%<br/>";
-        if (data.TAX_CONT) html += "Tax: " + data.TAX_CONT + "%<br/>";
+        if (currentColorMetric === "Population" && data.POPULATION) {
+            html += "Population: " + data.POPULATION + "m<br/>";
+        } else if (currentColorMetric === "FertilityRate" && data.FERTILITY) {
+            html += "Fertility: " + data.FERTILITY + "<br/>";
+        } else if (currentColorMetric === "GDPPerCapita" && data.GDPCAPITA) {
+            html += "GDP/Capita: INR " + data.GDPCAPITA + "k<br/>";
+        } else if (currentColorMetric === "TaxContribution" && data.TAX_CONT) {
+            html += "Tax Contribution: " + data.TAX_CONT + "%<br/>";
+        } else if (currentColorMetric === "Literacy" && data.LITERACY) {
+            html += "Literacy: " + data.LITERACY + "%<br/>";
+        } else if (currentColorMetric === "CurrentSeats" || currentColorMetric === "ProjectedSeats") {
+            if (data.CURR_SEATS) html += "Current Seats: " + data.CURR_SEATS + "<br/>";
+            if (data.PR_SEATS) html += "Projected Seats: " + data.PR_SEATS + "<br/>";
+        } else {
+            // Fallback for Base Map
+            if (data.CURR_SEATS) html += "Current Seats: " + data.CURR_SEATS + "<br/>";
+            if (data.POPULATION) html += "Population: " + data.POPULATION + "m<br/>";
+        }
         
-        tooltip.html(html).style("left", (d3.event.pageX + 15) + "px").style("top", (d3.event.pageY - 28) + "px").transition().duration(200).style("opacity", .9);
+        var mousePos = d3.mouse(d3.select("#map-svg").node());
+        tooltip.html(html).style("left", (mousePos[0] + 15) + "px").style("top", (mousePos[1] - 28) + "px").transition().duration(200).style("opacity", .9);
     }
 
     function hideTooltip() { tooltip.transition().duration(300).style("opacity", 0); }

@@ -571,15 +571,17 @@ mark, .highlight {
 .tooltip {
     position: absolute;
     text-align: center;
-    padding: 10px;
-    font: 14px sans-serif;
-    background: #fff;
-    color: #000;
-    border: 0px;
-    border-radius: 8px;
+    padding: 10px 15px;
+    font: 14px "Inter", sans-serif;
+    background-color: #fdf9f2;
+    color: #3e2723;
+    border: 2px solid #5d4037;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
     pointer-events: none;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    font-weight: 600;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+    font-weight: 500;
+    line-height: 1.4;
+    z-index: 1000;
 }
 
 /* Map paths and circles */

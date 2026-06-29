@@ -26,6 +26,7 @@
 		"d3-interpolate-path": "^2.3.0",
 		"flubber": "^0.4.2",
 		"intersection-observer": "^0.12.2",
+		"puppeteer": "^25.2.1",
 		"scrollama": "^3.2.0"
 	}
 }

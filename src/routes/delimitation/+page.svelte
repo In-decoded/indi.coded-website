@@ -804,13 +804,13 @@
             </p>
 
             <div
-                style="display: flex; gap: 60px; align-items: flex-start; position: relative; margin-top: 40px;"
+                style="display: flex; gap: 150px; align-items: flex-start; position: relative; margin-top: 40px;"
             >
                 <div
-                    style="flex: 1.2; position: sticky; top: 25vh; z-index: 10; padding: 20px 0; background: transparent; aspect-ratio: 8/3; min-width: 0;"
+                    style="flex: 1.2; position: sticky; top: 25vh; z-index: 10; padding: 20px 0; background: transparent; aspect-ratio: 1.7; min-width: 0; order: 2;"
                 >
                     <svg
-                        viewBox="0 0 700 300"
+                        viewBox="0 0 700 400"
                         style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: visible;"
                     >
                         <defs>
@@ -821,7 +821,7 @@
                         </defs>
                         <!-- Thick hand-drawn style dashed line, using inline style to override any global CSS path fills -->
                         <path
-                            d="M 40 230 C 90 130, 140 90, 190 90 C 250 90, 290 200, 350 200 C 400 200, 440 140, 480 140 C 520 140, 550 70, 580 70"
+                            d="M 50 270 C 110 130, 150 60, 210 60 C 290 60, 320 225, 380 225 C 430 225, 470 135, 520 135 C 570 135, 590 30, 630 30"
                             style="fill: transparent !important;"
                             stroke="#444"
                             stroke-width="4"
@@ -832,24 +832,24 @@
                         <g
                             style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
                             opacity="1"
-                            transform-origin="40 230"
+                            transform-origin="50 270"
                             transform={activeProcess === 1
-                                ? "scale(1.3)"
+                                ? "scale(1.6)"
                                 : "scale(1)"}
                         >
                             <circle
-                                cx="40"
-                                cy="230"
+                                cx="50"
+                                cy="270"
                                 r="18"
-                                style="fill: #d32f2f !important;"
+                                style="fill: {activeProcess === 1 ? '#bf360c' : '#d32f2f'} !important; transition: fill 0.3s;"
                                 filter="url(#handdrawn-circle)"
                             />
                             <text
-                                x="40"
-                                y="236"
+                                x="50"
+                                y="276"
                                 text-anchor="middle"
                                 fill="#fff"
-                                font-size="16"
+                                font-size={activeProcess === 1 ? "22" : "16"}
                                 font-family="'Instrument Serif', serif"
                                 font-weight="bold">1</text
                             >
@@ -857,24 +857,24 @@
                         <g
                             style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
                             opacity="1"
-                            transform-origin="190 90"
+                            transform-origin="210 60"
                             transform={activeProcess === 2
-                                ? "scale(1.3)"
+                                ? "scale(1.6)"
                                 : "scale(1)"}
                         >
                             <circle
-                                cx="190"
-                                cy="90"
+                                cx="210"
+                                cy="60"
                                 r="18"
-                                style="fill: #d32f2f !important;"
+                                style="fill: {activeProcess === 2 ? '#bf360c' : '#d32f2f'} !important; transition: fill 0.3s;"
                                 filter="url(#handdrawn-circle)"
                             />
                             <text
-                                x="190"
-                                y="96"
+                                x="210"
+                                y="66"
                                 text-anchor="middle"
                                 fill="#fff"
-                                font-size="16"
+                                font-size={activeProcess === 2 ? "22" : "16"}
                                 font-family="'Instrument Serif', serif"
                                 font-weight="bold">2</text
                             >
@@ -882,24 +882,24 @@
                         <g
                             style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
                             opacity="1"
-                            transform-origin="350 200"
+                            transform-origin="380 225"
                             transform={activeProcess === 3
-                                ? "scale(1.3)"
+                                ? "scale(1.6)"
                                 : "scale(1)"}
                         >
                             <circle
-                                cx="350"
-                                cy="200"
+                                cx="380"
+                                cy="225"
                                 r="18"
-                                style="fill: #d32f2f !important;"
+                                style="fill: {activeProcess === 3 ? '#bf360c' : '#d32f2f'} !important; transition: fill 0.3s;"
                                 filter="url(#handdrawn-circle)"
                             />
                             <text
-                                x="350"
-                                y="206"
+                                x="380"
+                                y="231"
                                 text-anchor="middle"
                                 fill="#fff"
-                                font-size="16"
+                                font-size={activeProcess === 3 ? "22" : "16"}
                                 font-family="'Instrument Serif', serif"
                                 font-weight="bold">3</text
                             >
@@ -907,24 +907,24 @@
                         <g
                             style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
                             opacity="1"
-                            transform-origin="480 140"
+                            transform-origin="520 135"
                             transform={activeProcess === 4
-                                ? "scale(1.3)"
+                                ? "scale(1.6)"
                                 : "scale(1)"}
                         >
                             <circle
-                                cx="480"
-                                cy="140"
+                                cx="520"
+                                cy="135"
                                 r="18"
-                                style="fill: #d32f2f !important;"
+                                style="fill: {activeProcess === 4 ? '#bf360c' : '#d32f2f'} !important; transition: fill 0.3s;"
                                 filter="url(#handdrawn-circle)"
                             />
                             <text
-                                x="480"
-                                y="146"
+                                x="520"
+                                y="141"
                                 text-anchor="middle"
                                 fill="#fff"
-                                font-size="16"
+                                font-size={activeProcess === 4 ? "22" : "16"}
                                 font-family="'Instrument Serif', serif"
                                 font-weight="bold">4</text
                             >
@@ -932,24 +932,24 @@
                         <g
                             style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
                             opacity="1"
-                            transform-origin="580 70"
+                            transform-origin="630 30"
                             transform={activeProcess === 5
-                                ? "scale(1.3)"
+                                ? "scale(1.6)"
                                 : "scale(1)"}
                         >
                             <circle
-                                cx="580"
-                                cy="70"
+                                cx="630"
+                                cy="30"
                                 r="18"
-                                style="fill: #d32f2f !important;"
+                                style="fill: {activeProcess === 5 ? '#bf360c' : '#d32f2f'} !important; transition: fill 0.3s;"
                                 filter="url(#handdrawn-circle)"
                             />
                             <text
-                                x="580"
-                                y="76"
+                                x="630"
+                                y="36"
                                 text-anchor="middle"
                                 fill="#fff"
-                                font-size="16"
+                                font-size={activeProcess === 5 ? "22" : "16"}
                                 font-family="'Instrument Serif', serif"
                                 font-weight="bold">5</text
                             >
@@ -999,7 +999,7 @@
                 </div>
 
                 <div
-                    style="flex: 1.1; margin-top: 10vh; padding-bottom: 20vh; min-width: 400px;"
+                    style="flex: 1.1; margin-top: 10vh; padding-bottom: 20vh; min-width: 400px; order: 1;"
                 >
                     <div
                         class="process-trigger notebook-quote"
@@ -1622,6 +1622,7 @@
     </div>
 </section>
 
+<!-- Global Tooltip for Map -->
 <svelte:window on:contextmenu|preventDefault />
 
 <style>
