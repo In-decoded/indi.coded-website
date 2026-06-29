@@ -10,7 +10,11 @@ export async function initDelimitation() {
 
     var mapCenterX = width / 2;
 
-    var svg = d3.select("#map-svg");
+    var svg = d3.select("#map-svg")
+        .attr("viewBox", "0 0 " + width + " " + height)
+        .attr("preserveAspectRatio", "xMidYMid meet")
+        .style("width", "100%")
+        .style("height", "100%");
     var tooltip = d3.select(".tooltip");
     var pathn;
 
