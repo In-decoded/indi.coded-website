@@ -27,19 +27,19 @@
             heading: "Population Distribution",
             caption:
                 "In this region, there are 40% Urban voters and 60% Rural voters",
-            img: "/gerrymander-1.png",
+            img: "/delimitation/images/gerrymander-1.png",
         },
         {
             heading: "Existing Constituencies",
             caption:
                 "Delimitation occurs in favour of Rural voters in all constituencies",
-            img: "/gerrymander-2.png",
+            img: "/delimitation/images/gerrymander-2.png",
         },
         {
             heading: "After Delimitation",
             caption:
                 "Delimitation occurs in favour of Urban voters in constituencies A & B and Rural voters in C & D",
-            img: "/gerrymander-3.png",
+            img: "/delimitation/images/gerrymander-3.png",
         },
     ];
 
@@ -84,7 +84,7 @@
         style="max-width: 1000px; margin: 0 auto 40px auto; text-align: center;"
     >
         <img
-            src="/delimitation-hero.png"
+            src="/delimitation/images/delimitation-hero.png"
             alt="Where do we draw the line? A Visual Journey Through India's Delimitation Dilemma"
             style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"
         />
@@ -178,7 +178,7 @@
 
         <figure class="intro-diagram">
             <img
-                src="/delimitation-diagram.png"
+                src="/delimitation/images/delimitation-diagram.png"
                 alt="Diagram explaining delimitation equalizing population density"
             />
             <figcaption>
@@ -447,7 +447,7 @@
 
             <figure class="handdrawn-box intro-diagram" style="margin: 30px 0;">
                 <img
-                    src="/tn-up-comparison.png"
+                    src="/delimitation/images/tn-up-comparison.png"
                     alt="Comparison of MP representation in Tamil Nadu and Uttar Pradesh"
                     style="width: 100%; height: auto; display: block;"
                 />
@@ -575,13 +575,13 @@
                 class="compare-container"
             >
                 <img
-                    src="/compare-1.png"
+                    src="/delimitation/images/compare-1.png"
                     class="compare-img"
                     alt="Constituency comparison 1"
                     style="max-width: 240px; width: 40%;"
                 />
                 <img
-                    src="/compare-2.png"
+                    src="/delimitation/images/compare-2.png"
                     class="compare-img"
                     alt="Constituency comparison 2"
                     style="max-width: 240px; width: 40%;"

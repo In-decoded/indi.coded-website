@@ -16,7 +16,7 @@
 
     onMount(async () => {
         // Fetch the GeoJSON from the static/data folder
-        const response = await fetch('/data/GDP.geojson');
+        const response = await fetch('/delimitation/data/GDP.geojson');
         const geojson = await response.json();
 
         // Setup D3 Projection tailored for India

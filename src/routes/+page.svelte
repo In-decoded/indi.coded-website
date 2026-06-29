@@ -138,7 +138,7 @@
         <a href="/delimitation" class="experiment-card">
             <div
                 class="card-image"
-                style="background-image: url('/delimitation_card.png');"
+                style="background-image: url('/delimitation/images/delimitation_card.png');"
             ></div>
             <div class="card-meta">
                 <span class="tag">Data Story</span>

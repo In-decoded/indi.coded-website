@@ -69,7 +69,7 @@ export async function initDelimitation() {
     ];
 
     try {
-        const responses = await Promise.all(files.map(f => fetch('/data/' + f.file)));
+        const responses = await Promise.all(files.map(f => fetch('/delimitation/data/' + f.file)));
         const jsons = await Promise.all(responses.map(r => r.json()));
         
         jsons.forEach((data, i) => {
