@@ -135,20 +135,22 @@
 
     <div class="experiments-grid">
         <!-- Item 1: Delimitation Project -->
-        <a href="/delimitation" class="experiment-card">
+        <a href="/delimitation" class="experiment-card featured-card">
             <div
                 class="card-image"
-                style="background-image: url('/delimitation/images/delimitation_card.png');"
+                style="background-image: url('/delimitation/images/delimitation_hero.png');"
             ></div>
-            <div class="card-meta">
-                <span class="tag">Data Story</span>
-                <span class="year">June 2026</span>
+            <div class="card-content">
+                <div class="card-meta">
+                    <span class="tag">Data Story</span>
+                    <span class="year">June 2026</span>
+                </div>
+                <h3>Where do we draw the line?</h3>
+                <p>
+                    An interactive exploration of India's shifting parliamentary
+                    representation and demographic power.
+                </p>
             </div>
-            <h3>Where do we draw the line?</h3>
-            <p>
-                An interactive exploration of India's shifting parliamentary
-                representation and demographic power.
-            </p>
         </a>
     </div>
 </section>
@@ -469,7 +471,7 @@
         width: 100%;
         aspect-ratio: 1408 / 1024;
         background-color: #f0ede6;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         margin-bottom: 1.5rem;
@@ -507,6 +509,70 @@
         line-height: 1.5;
         color: #5d4037;
         margin: 0;
+    }
+
+    /* BENTO GRID FEATURED CARD */
+    .featured-card {
+        grid-column: 1 / -1; /* Span across all columns */
+        display: grid;
+        grid-template-columns: 3fr 2fr; /* Image takes up more space */
+        gap: 4rem;
+        align-items: center;
+        background-color: #f6f3eb; /* Subtle background for the bento block */
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    }
+
+    .featured-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+    }
+
+    .featured-card .card-image {
+        margin-bottom: 0;
+        height: 100%;
+        min-height: 400px;
+        aspect-ratio: 16 / 9; /* Wider aspect ratio for the featured image */
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .featured-card .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 2rem;
+    }
+
+    .featured-card h3 {
+        font-size: 4rem; /* Much larger headline */
+        line-height: 1.05;
+        margin-bottom: 1.5rem;
+    }
+
+    .featured-card p {
+        font-size: 1.25rem; /* Larger paragraph text */
+        line-height: 1.6;
+    }
+    
+    .featured-card .card-meta {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Responsive adjustment for featured card */
+    @media (max-width: 900px) {
+        .featured-card {
+            grid-template-columns: 1fr;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        .featured-card .card-content {
+            padding-right: 0;
+        }
+        .featured-card h3 {
+            font-size: 2.5rem;
+        }
     }
 
     /* --- CTA SECTION --- */

@@ -4,7 +4,7 @@ import shutil
 # Files to move from static/ to static/delimitation/images/
 images_to_move = [
     "delimitation-diagram.png",
-    "delimitation-hero.png",
+    "delimitation_hero.png",
     "delimitation_card.png",
     "tn-up-comparison.png",
     "compare-1.png",

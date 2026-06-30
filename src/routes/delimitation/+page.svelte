@@ -84,7 +84,7 @@
         style="max-width: 1000px; margin: 0 auto 40px auto; text-align: center;"
     >
         <img
-            src="/delimitation/images/delimitation-hero.png"
+            src="/delimitation/images/delimitation_hero.png"
             alt="Where do we draw the line? A Visual Journey Through India's Delimitation Dilemma"
             style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);"
         />
